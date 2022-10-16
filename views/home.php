@@ -26,19 +26,24 @@
     </div>
     <!-- Ligne séparatrice -->
     <div class="line margin-top-10px"></div>
-    <!-- Titre de la section -->
-    <h3 class="sectionTitle">À Propos</h3>
-    <!-- Paragraphe de "À Propos" -->
-    <p class="paragraphHome">Aujourd'hui, les garages affiliés aux constructeurs automobiles abusent 
-        sur les tarifs auprès de leurs consommateurs, le budget consacré à l’entretien des véhicules 
-        a augmenté de 50% depuis 2000. Aujourd’hui, si vous voulez faire des économies, vous pouvez 
-        l’entretenir ou la réparer vous-même grâce à Garage'Eco.</p>
+    <!-- Container de la section à propos -->
+    <div class="flex-column-center">
+        <!-- Titre de la section -->
+        <h3 class="sectionTitle">À Propos</h3>
+        <!-- Paragraphe de "À Propos" -->
+        <p class="paragraphHome">Aujourd'hui, les garages affiliés aux constructeurs automobiles abusent 
+            sur les tarifs auprès de leurs consommateurs, le budget consacré à l’entretien des véhicules 
+            a augmenté de 50% depuis 2000. Aujourd’hui, si vous voulez faire des économies, vous pouvez 
+            l’entretenir ou la réparer vous-même grâce à Garage'Eco.</p>
+    </div>
     <!-- Ligne séparatrice -->
     <div class="line margin-top-20px"></div>
-    <!-- Titre de la section -->
-    <h3 class="sectionTitle">La réparation à domicile</h3>
-    <!-- Paragraphe de "La réparation à domicile" -->
-    <p class="paragraphHome margin-bottom-20px">Pour faire vos réparations vous-même, certaines fois, vous aurez besoin 
-        des équipements particuliers et des conseils d’un professionnel ou d’un amateur très averti. 
-        Assurez-vous d’avoir les outils et les pièces nécessaires pour le bien de vôtre réparation.</p>
+    <div class="flex-column-center">
+        <!-- Titre de la section -->
+        <h3 class="sectionTitle">La réparation à domicile</h3>
+        <!-- Paragraphe de "La réparation à domicile" -->
+        <p class="paragraphHome margin-bottom-20px">Pour faire vos réparations vous-même, certaines fois, vous aurez besoin 
+            des équipements particuliers et des conseils d’un professionnel ou d’un amateur très averti. 
+            Assurez-vous d’avoir les outils et les pièces nécessaires pour le bien de vôtre réparation.</p>
+    </div>
 </main>
