@@ -30,7 +30,7 @@
         </div>
     </div>
     <!-- Quatrième ligne -->
-    <div class="rowFooter4 flex-row-space-between">
+    <div class="rowFooter4 flex-row">
         <a href="?????">Conditions d'utilisation</a>
         <a href="?????">Mentions légales</a>
     </div>

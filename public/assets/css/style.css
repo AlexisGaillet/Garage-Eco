@@ -142,7 +142,13 @@ header {
 
 
 
-        /* MAIN */
+
+
+
+
+
+                /* MAIN */
+        /* PAGE PRINCIPALE */
 
     /* Section Choix */
 
@@ -192,6 +198,29 @@ border-radius: 10px;
     font-size: 2rem;
     color: #000000;
 }
+
+
+
+
+                        /* INSCRIPTION */
+        /* Formulaire */
+.mainRegister {
+    height: ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -268,8 +297,8 @@ footer {
 .rowFooter4 {
     margin-top: 5px;
     font-size: 0.8rem;
-    width: 80%;
-    align-self: center;
+    width: auto;
+    align-self: flex-start;
 }
 
 /* Retrait du soulignement et texte blanc des liens */
@@ -277,6 +306,21 @@ footer {
     color: #fff;
     text-decoration: none;
 }
+
+.rowFooter4 a:first-child {
+    margin-right: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
