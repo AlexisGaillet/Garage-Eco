@@ -1,0 +1,19 @@
+@media screen and (min-width: 576px) {
+    :root {
+        font-size: 12px;
+    }
+
+    header {
+        height: 74px;
+        margin-bottom: 30px;
+    }
+
+    footer {
+        height: 126px;
+        margin-top: 30px;
+    }
+
+    .mainRegisterLogin {
+        min-height: calc(100vh - 74px - 126px - 60px);
+    }
+}

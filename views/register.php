@@ -1,23 +1,21 @@
-<main class="mainRegister">
+<main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Inscription</h2>
-    <fieldset class="registerFieldset">
+    <form method="post" action="#" class="registerLoginForm flex-column">
         <ul>
-            <li><input type="text" placeholder="Prénom" name="firstname" required></li>
-            <li><input type="text" placeholder="Nom" name="lastname" required></li>
-            <li><input type="email" placeholder="Email" name="email" required></li>
-            <li><input type="password" placeholder="Mot de passe" name="password" required></li>
-            <li><input type="password" placeholder="Confirmation du mot de passe" name="confirmPassword" required></li>
+            <li><input type="text" placeholder="Prénom" name="firstname" class="flex-row" required></li>
+            <li><input type="text" placeholder="Nom" name="lastname" class="flex-row" required></li>
+            <li><input type="email" placeholder="Email" name="email" class="flex-row" required></li>
+            <li><input type="password" placeholder="Mot de passe" name="password" class="flex-row" required></li>
+            <li><input type="password" placeholder="Confirmation du mot de passe" name="confirmPassword" class="flex-row" required></li>
         </ul>
-        <input type="checkbox" name="acceptConditions" id="acceptConditions">
-        <label for="acceptConditions">J'ai lu et j'accêpte <a href="XXXXXXXXXXXXX">les conditions</a></label>
-        <a href="XXXXXXXXXXX" class="registerButton">
-            <div>
-                <p>Inscription</p>
-            </div>    
-        </a>
-        <div class="alreadyHaveAccount">
-            <p>Vous avez déjà un compte ?</p>
-            <a href="XXXXXXXXXXX">Cliquez pour vous connecter</a>
+        <div class="acceptConditionsContainer flex-row">
+            <input type="checkbox" name="acceptConditions" id="acceptConditions" required>
+            <label for="acceptConditions">J'ai lu et j'accêpte <a href="XXXXXXXXXXXXX">les conditions</a></label>
         </div>
-    </fieldset>
+        <input type="submit" value="Inscription" class="registerLoginButton">
+        <div class="linkUnderButtonContainer">
+            <p>Vous avez déjà un compte ?</p>
+            <a href="XXXXXXXXXXX" class="linkUnderButton">Cliquez pour vous connecter</a>
+        </div>
+    </form>
 </main>

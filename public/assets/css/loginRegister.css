@@ -1,0 +1,72 @@
+/* Taille et positionnement du main */
+.mainRegisterLogin {
+    min-height: calc(100vh - 70px - 117.5px - 40px);
+    justify-content: center;
+}
+
+/* Positionnement du formulaire */
+.registerLoginForm {
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+}
+
+/* Retrait des points de liste */
+.registerLoginForm ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Items de la liste */
+.registerLoginForm ul li {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Inputs du formulaire */
+.registerLoginForm ul li input {
+    width: 100%;
+    max-width: 400px;
+    height: 3rem;
+    padding-left: 5px;
+    border: 3px solid #817EFF;
+    border-radius: 10px;
+    align-items: center;
+}
+
+/* Container de la checkbox et texte des conditions */
+.acceptConditionsContainer {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Marge de la checkbox */
+.acceptConditionsContainer input {
+    margin-right: 6px;
+}
+
+/* Bouton Inscription/Connexion */
+.registerLoginButton {
+    width: 15rem;
+    height: 4rem;
+    margin-top: 15px;
+    background: linear-gradient(0deg, #4D4ACC 0%, #817EFF 100%);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 2rem;
+    align-self: center;
+}
+
+/* Première ligne du texte sous le bouton */
+.linkUnderButtonContainer p:first-child {
+    margin-bottom: 0;
+    margin-top: 25px;
+}
+
+/* Couleur et retrait du soulignement du lien */
+.linkUnderButton {
+    color: #888888;
+    text-decoration: none;
+}

@@ -6,7 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Ressource -->
     <link rel="stylesheet" href="./../public/assets/css/style.css">
+    <!-- Header & Footer -->
+    <link rel="stylesheet" href="./../public/assets/css/headerFooter.css">
+    <!-- Home -->
+    <link rel="stylesheet" href="./../public/assets/css/home.css">
+    <!-- Formulaire Inscription/Connexion -->
+    <link rel="stylesheet" href="./../public/assets/css/loginRegister.css">
+    <!-- @media -->
+    <link rel="stylesheet" href="./../public/assets/css/mediaSmall.css">
+    <link rel="stylesheet" href="./../public/assets/css/mediaLarge.css">
+    <link rel="stylesheet" href="./../public/assets/css/mediaXL.css">
+
     <script defer src="./../public/assets/js/script.js"></script>
     <title>Garage'Eco</title>
 </head>
