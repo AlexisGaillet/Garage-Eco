@@ -51,6 +51,17 @@ body {
 }
 
 
+
+
+    /* Décoration */
+.no-decoration {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+
     /* Marge */
 
 /* Marge en haut de 10px */

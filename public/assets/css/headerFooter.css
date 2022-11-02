@@ -19,10 +19,106 @@ header {
     width: 132px;
     height: auto;
 }
-                /* IMPOSSIBLE DE BIEN PLACER LA NAVBAR */
+
+/* Lien du logo (pour qu'il soit aligner avec le menu burger) */
+.linkLogo {
+    margin-top: 7px;
+}
+
+/* Container de la navbar entière (logo et barre de nav) */
+.navbarContainer {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* Container des liens de la navbar */
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding-left: 0;
+}
+
+/* Liens de la navbar */
+.nav-link {
+    transition: 0.7s ease;
+    color: white;
+}
+
+/* Survol des liens de la navbar */
+.nav-link:hover {
+    color: rgb(200, 200, 200);
+}
+
+/* Container des barres du bouton */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Barre du bouton menu burger */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Media pour la responsivité du menu burger */
+@media screen and (max-width: 768px) {
+    /* Affichage du bouton */
+    .burger {
+        display: block;
+    }
+
+    /* Animation du bouton au clique */
+    .burger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .burger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Affichage du menu */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(24, 24, 24, 0.97);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    /* Espacement des liens quand le menu est ouvert */
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    /* Emplacement du menu (ouvert) */
+    .nav-menu.active {
+        left: 0;
+    }
+}
 
 
-
+@media screen and (min-width: 576px) {
+    .nav-menu {
+        top: 74px;
+    }
+}
 
 
 
@@ -39,6 +135,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 117.5px;
+    box-sizing: border-box;
     margin-top: 20px;
     padding: 12px;
     background: linear-gradient(0deg, #4D4ACC 0%, #817EFF 100%);
