@@ -15,7 +15,7 @@
         <input type="submit" value="Inscription" class="registerLoginButton">
         <div class="linkUnderButtonContainer">
             <p>Vous avez déjà un compte ?</p>
-            <a href="XXXXXXXXXXX" class="linkUnderButton">Cliquez pour vous connecter</a>
+            <a href="/controllers/login-controller.php" class="linkUnderButton">Cliquez pour vous connecter</a>
         </div>
     </form>
 </main>

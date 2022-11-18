@@ -14,9 +14,9 @@
     <!-- Formulaire Inscription/Connexion -->
     <link rel="stylesheet" href="./../public/assets/css/loginRegister.css">
     <!-- @media -->
-    <link rel="stylesheet" href="./../public/assets/css/mediaSmall.css">
-    <link rel="stylesheet" href="./../public/assets/css/mediaLarge.css">
-    <link rel="stylesheet" href="./../public/assets/css/mediaXL.css">
+    <link rel="stylesheet" href="./../public/assets/css/mediaSmall.css" media="screen and (min-width: 576px)">
+    <link rel="stylesheet" href="./../public/assets/css/mediaLarge.css" media="screen and (min-width: 996px)">
+    <link rel="stylesheet" href="./../public/assets/css/mediaXL.css" media="screen and (min-width: 1200px)">
 
     <!-- Scipt JS -->
     <script defer src="./../public/assets/js/script.js"></script>
@@ -32,11 +32,14 @@
         <!-- Container de la navbar entière (logo et barre de nav) -->
         <nav class="navbarContainer">
             <!-- Logo -->
-            <a href="#" class="linkLogo"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
+            <a href="/controllers/home-controller.php" class="linkLogo"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
 
             <!-- Container des liens de la navbar -->
             <ul class="nav-menu">
                 <!-- Liens de la navbar -->
+                <li class="nav-item no-decoration">
+                    <a href="/controllers/addCar-controller.php" class="nav-link no-decoration">Ajouter un véhicule</a>
+                </li>
                 <li class="nav-item no-decoration">
                     <a href="/controllers/home-controller.php" class="nav-link no-decoration">Accueil</a>
                 </li>

@@ -8,7 +8,7 @@
         <input type="submit" value="Connexion" class="registerLoginButton" required>
         <div class="linkUnderButtonContainer">
             <p>Mot de passe oublié ?</p>
-            <a href="XXXXXXXXXXX" class="linkUnderButton">Cliquez pour le réinitialiser</a>
+            <a href="/controllers/forgotPassword-controller.php" class="linkUnderButton">Cliquez pour le réinitialiser</a>
         </div>
     </form>
 </main>

@@ -25,7 +25,7 @@
         <!-- Partenaire -->
         <div class="partnerContainer">
             <a href="?????" target="_blank"><div class="lavagEco">
-                <p>Lavag'Eco</p>
+                <p>D'Tailing</p>
             </div></a>
         </div>
     </div>

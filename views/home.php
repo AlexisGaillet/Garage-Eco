@@ -10,18 +10,18 @@
         <!-- Bordure du premier choix -->
         <div class="boxChoiceBorder">
             <!-- Container (avec background-image) du premier choix -->
-            <a href="" class="boxLink"><div class="box1 boxChoice">
+            <a href="#" class="boxLink"><span class="box1 boxChoice">
                 <!-- Texte du premier choix -->
                 <p class="textChoice">Moi-même</p>
-            </div></a>
+            </span></a>
         </div>
         <!-- Bordure du deuxième choix -->
         <div class="boxChoiceBorder">
             <!-- Container (avec background-image) du deuxième choix -->
-            <a href="" class="boxLink"><div class="box2 boxChoice">
+            <a href="" class="boxLink"><span class="box2 boxChoice">
                 <!-- Texte du deuxième choix -->
                 <p class="textChoice">Dans un garage</p>
-            </div></a>
+            </span></a>
         </div>
     </div>
     <!-- Ligne séparatrice -->
