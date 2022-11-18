@@ -4,7 +4,7 @@
         <!-- Logo cliquable -->
         <a href="??????" target="_blank"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
         <!-- "Site crée par..." avec lien vers le CV numérique -->
-        <p class="tp1zdlQ">Site crée par <a href="">Alexis Gaillet</a></p>
+        <p class="tp1zdlQ">Site crée par <a href="" target="_blank">Alexis Gaillet</a></p>
     </div>
     <!-- Deuxième ligne -->
     <div class="rowFooter2 flex-row">

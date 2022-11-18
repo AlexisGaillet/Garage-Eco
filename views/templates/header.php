@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
     <!-- Ressource -->
     <link rel="stylesheet" href="./../public/assets/css/style.css">
     <!-- Header & Footer -->
@@ -39,13 +38,13 @@
             <ul class="nav-menu">
                 <!-- Liens de la navbar -->
                 <li class="nav-item no-decoration">
-                    <a href="#" class="nav-link no-decoration">Accueil</a>
+                    <a href="/controllers/home-controller.php" class="nav-link no-decoration">Accueil</a>
                 </li>
                 <li class="nav-item no-decoration">
-                    <a href="#" class="nav-link no-decoration">Inscription</a>
+                    <a href="/controllers/register-controller.php" class="nav-link no-decoration">Inscription</a>
                 </li>
                 <li class="nav-item no-decoration">
-                    <a href="#" class="nav-link no-decoration">Connexion</a>
+                    <a href="/controllers/login-controller.php" class="nav-link no-decoration">Connexion</a>
                 </li>
             </ul>
 
