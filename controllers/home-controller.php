@@ -1,7 +1,14 @@
 <?php
 
-        // Appel des vues
-    
+
+    $stylesheet = 'home';
+    $headTitle = 'Accueil';
+
+
+
+
+
+        // Appel des vues    
     // Header
     include(__DIR__.'/../views/templates/header.php');
     // Main
