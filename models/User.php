@@ -40,18 +40,6 @@ class User {
         return $this->_lastname;
     }
 
-    public function getPhone(): string {
-        return $this->_phone;
-    }
-
-    public function getCity(): string {
-        return $this->_city;
-    }
-
-    public function getContry(): string {
-        return $this->_contry;
-    }
-
     public function getMail(): string {
         return $this->_mail;
     }
@@ -74,23 +62,31 @@ class User {
         $this->_lastname = $lastname;
     }
 
-    public function setPhone(string $phone): void {
-        $this->_phone = $phone;
-    }
-
-    public function setCity(string $city): void {
-        $this->_city = $city;
-    }
-
-    public function setContry(string $contry): void {
-        $this->_contry = $contry;
-    }
-
     public function setMail(string $mail): void {
         $this->_mail = $mail;
     }
 
     public function setPassword(string $password): void {
         $this->_password = $password;
+    }
+
+
+
+
+
+    // Méthodes
+
+    /**
+     * Méthode qui permet de vérifier si l'utilisateur existe déjà dans la base de donnée
+     * @param string $mail
+     * 
+     * @return bool
+     */
+    public static function exist(string $mail):bool {
+        $sth = Database::getInstance()->prepare('SELECT * FROM users WHERE mail = :mail');
+        $sth -> bindValue(':mail', $mail);
+        $sth -> execute();
+        $result = $sth -> fetch(PDO::FETCH_ASSOC);
+        return $result ? true : false;
     }
 }

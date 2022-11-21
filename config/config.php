@@ -9,12 +9,8 @@ require_once(__DIR__.'/../helpers/SessionFlash.php');
 
 // Déclaration des Regex
 define('REGEX_NO_NUMBER', "^[a-zA-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜàáâãäåæçèéêëìíîïñòóôõöùúûüýÿ '-]+$");
+define('REGEX_PASSWORD', "(?=.[A-Z])(?=.\d)(?=.[!@#$&])[A-Za-z\d!@#$&*]{8,}");
 define('REGEX_EMAIL', "^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
-define('REGEX_DATE', "^\d{4}(-)(((0)[0-9])|((1)[0-2]))(-)([0-2][0-9]|(3)[0-1])$");
-define('REGEX_POSTALCODE', "^[0-9]{5}$");
-define('REGEX_PHONENUMBER', '^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$');
-define('REGEX_URL_LINKEDIN', "^(http(s)?:\/\/)?(www.linkedin.com\/in)\/[a-zA-Z0-9()-]+\/?$");
-define('REGEX_LANGUAGE', "^[a-zA-Z0-9 \/'-]+$");
 
 
 

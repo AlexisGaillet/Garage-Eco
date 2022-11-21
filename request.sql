@@ -21,11 +21,8 @@ CREATE TABLE users(
     Id_users INT AUTO_INCREMENT,
     firstname VARCHAR(30),
     lastname VARCHAR(30),
-    phone VARCHAR(15),
-    city VARCHAR(35),
-    contry VARCHAR(25),
     mail VARCHAR(125),
-    password VARCHAR(50),
+    password VARCHAR(255),
     created_at DATETIME,
     valided_at DATETIME,
     PRIMARY KEY(Id_users)

@@ -1,6 +1,6 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Inscription</h2>
-    <form method="post" action="#" class="registerLoginForm flex-column">
+    <form method="post" class="registerLoginForm flex-column">
         <ul>
             <li><input type="text" placeholder="Prénom" name="firstname" class="flex-row" required></li>
             <li><input type="text" placeholder="Nom" name="lastname" class="flex-row" required></li>
