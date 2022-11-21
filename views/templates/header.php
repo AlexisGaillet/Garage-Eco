@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Si le nom du fichier css est défini dans le controller de la page alors on fait <link> de ce fichier -->
     <?= (isset($stylesheet)) ? '<link rel="stylesheet" href="./../public/assets/css/' . $stylesheet . '.css">' : ''; ?>
     <!-- Ressource -->
     <link rel="stylesheet" href="./../public/assets/css/style.css">
     <!-- Header & Footer -->
     <link rel="stylesheet" href="./../public/assets/css/headerFooter.css">
-    <!-- @media -->
-    <link rel="stylesheet" href="./../public/assets/css/mediaSmall.css" media="screen and (min-width: 576px)">
-    <link rel="stylesheet" href="./../public/assets/css/mediaLarge.css" media="screen and (min-width: 996px)">
-    <link rel="stylesheet" href="./../public/assets/css/mediaXL.css" media="screen and (min-width: 1200px)">
 
     <!-- Scipt JS -->
     <script defer src="./../public/assets/js/script.js"></script>
