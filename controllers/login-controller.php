@@ -57,8 +57,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Si il n'y a pas d'erreur
     if (empty($error)) {
+        // On retire le mot de passe de l'object
         $user -> password = null;
+        // On créer une Session avec les ses données (sans le mdp)
         $_SESSION['user'] = $user;
+        // On le redirige à l'accueil
         header('Location: /controllers/home-controller.php');
     }
 

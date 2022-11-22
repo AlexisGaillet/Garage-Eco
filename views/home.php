@@ -18,7 +18,7 @@
         <!-- Bordure du deuxième choix -->
         <div class="boxChoiceBorder">
             <!-- Container (avec background-image) du deuxième choix -->
-            <a href="" class="boxLink"><span class="box2 boxChoice">
+            <a href="https://www.google.com/search?q=Garage+%C3%A0+proximit%C3%A9" class="boxLink" target="_blank"><span class="box2 boxChoice">
                 <!-- Texte du deuxième choix -->
                 <p class="textChoice">Dans un garage</p>
             </span></a>
