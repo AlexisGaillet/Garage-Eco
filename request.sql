@@ -97,3 +97,7 @@ CREATE TABLE solutions_steps(
     FOREIGN KEY(Id_solutions) REFERENCES solutions(Id_solutions),
     FOREIGN KEY(Id_steps) REFERENCES steps(Id_steps)
 );
+
+
+    -- INITALISER LE CREATED_AT
+-- Colonne users -> structure -> row created_at -> modifier -> default value : CURRENT_TIMESTAMP

@@ -72,28 +72,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error['mail'] = 'L\'adresse mail n\'est pas valide';
         }
         // Vérification si l'email existe déjà
-        if (User::exist($mail) == false) {
+        if (User::exist($mail) == true) {
             $error['mail'] = 'L\'adresse mail existe déjà, connectez-vous ou utilisez une autre adresse mail';
         }
     }
 
-
+    // Vérification si les mots de passe sont identiques
     if($password != $confirmPassword) {
-        $errors['password'] = 'Les mots de passe doivent être identiques';
+        $error['password'] = 'Les mots de passe doivent être identiques';
     } else {
         if(empty($password)){
-            $errors['password'] = 'Le mot de passe est obligatoire';
+            $error['password'] = 'Le mot de passe est obligatoire';
         }
     }
 
+    // On hash le mot de passe
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    
+    echo '<pre>' , var_dump($error) , '</pre>';
 
-    if (empty($password) || empty($confirmPassword)) {
-        $error['password'] = 'Le mot de passe est obligatoire';
-    } else {}
-
-
-
-
+    if (empty($error)){
+        $user = new User($firstname, $lastname, $mail, $password);
+        $user = $user->set();
+        if($user){
+            // header('Location: /controllers/signInCtrl.php');
+            // exit;
+            echo '<pre>' , var_dump('Ajouté') , '</pre>';
+            echo '<pre>' , var_dump($user) , '</pre>';
+        }
+    }
 
 
 

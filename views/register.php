@@ -4,7 +4,7 @@
         <ul>
             <li><input type="text" placeholder="Prénom" name="firstname" class="flex-row" required></li>
             <li><input type="text" placeholder="Nom" name="lastname" class="flex-row" required></li>
-            <li><input type="email" placeholder="Email" name="email" class="flex-row" required></li>
+            <li><input type="email" placeholder="Email" name="mail" class="flex-row" required></li>
             <li><input type="password" placeholder="Mot de passe" name="password" class="flex-row" required></li>
             <li><input type="password" placeholder="Confirmation du mot de passe" name="confirmPassword" class="flex-row" required></li>
         </ul>

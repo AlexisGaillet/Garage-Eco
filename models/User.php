@@ -10,19 +10,13 @@ class User {
     private int $_id;
     private string $_firstname;
     private string $_lastname;
-    private string $_phone;
-    private string $_city;
-    private string $_contry;
     private string $_mail;
     private string $_password;
 
     // Constructeur
-    public function __construct(string $firstname, string $lastname, string $phone, string $city, string $contry, string $mail, string $password) {
+    public function __construct(string $firstname, string $lastname, string $mail, string $password) {
         $this->_firstname = $firstname;
         $this->_lastname = $lastname;
-        $this->_phone = $phone;
-        $this->_city = $city;
-        $this->_contry = $contry;
         $this->_mail = $mail;
         $this->_password = $password;
     }
@@ -86,7 +80,43 @@ class User {
         $sth = Database::getInstance()->prepare('SELECT * FROM users WHERE mail = :mail');
         $sth -> bindValue(':mail', $mail);
         $sth -> execute();
-        $result = $sth -> fetch(PDO::FETCH_ASSOC);
-        return $result ? true : false;
+        // Si la requête retourne un résultat, l'utilisateur existe déjà
+        if ($sth->fetch(PDO::FETCH_OBJ)==false){
+            return false;
+            } else {
+            return true;
+            }
+    }
+
+    /**
+     * Méthode qui permet de créer un nouvel utilisateur
+     * 
+     * @return bool
+     */
+    public function set(int $id = null):User|bool{
+        // Si l'id est null, on crée un nouvel utilisateur
+        if(is_null($id)){
+            $sql = 'INSERT INTO `users` (`firstname`, `lastname`, `mail`, `password`) 
+                    VALUES (:firstname, :lastname, :mail, :password);';
+        // Sinon on c'est qu'on veut modifier l'utilisateur
+        } else {
+            // $sql = 'UPDATE';
+        }
+        $sth = Database::getInstance()->prepare($sql);
+        $sth->bindValue(':firstname', $this->_firstname);
+        $sth->bindValue(':lastname', $this->_lastname);
+        $sth->bindValue(':mail', $this->_mail);
+        $sth->bindValue(':password', $this->_password);
+        if($sth->execute()){
+            // On récupère l'id de l'utilisateur créé et on le set dans l'objet User
+            if(is_null($id)){
+                $this->setId(Database::getInstance()->lastInsertId());
+            }
+            // On retourne l'objet User créé ou modifié
+            if($sth->rowCount()==1 || !is_null($id)){
+                return $this;
+            }
+        }
+        return false;
     }
 }
