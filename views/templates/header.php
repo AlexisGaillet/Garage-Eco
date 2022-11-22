@@ -38,12 +38,18 @@
                 <li class="nav-item no-decoration">
                     <a href="/controllers/home-controller.php" class="nav-link no-decoration">Accueil</a>
                 </li>
-                <li class="nav-item no-decoration">
-                    <a href="/controllers/register-controller.php" class="nav-link no-decoration">Inscription</a>
-                </li>
-                <li class="nav-item no-decoration">
-                    <a href="/controllers/login-controller.php" class="nav-link no-decoration">Connexion</a>
-                </li>
+                <?php if (!isset($_SESSION['user'])) { ?>
+                    <li class="nav-item no-decoration">
+                        <a href="/controllers/register-controller.php" class="nav-link no-decoration">Inscription</a>
+                    </li>
+                    <li class="nav-item no-decoration">
+                        <a href="/controllers/login-controller.php" class="nav-link no-decoration">Connexion</a>
+                    </li>
+                <?php } elseif (isset($_SESSION['user'])) { ?>
+                    <li class="nav-item no-decoration">
+                        <a href="/controllers/logout-controller.php" class="nav-link no-decoration">Déconnexion</a>
+                    </li>
+                <?php } ?>
             </ul>
 
             <!-- Container des barres du bouton -->

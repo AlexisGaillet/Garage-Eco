@@ -119,4 +119,22 @@ class User {
         }
         return false;
     }
+
+    /**
+     * Méthode qui permet de récupérer un utilisateur en fonction de son email
+     * @param string $email
+     * 
+     * @return object
+     */
+    public static function getByEmail(string $mail):object|bool{ // ou User|bool
+        $sth = Database::getInstance()->prepare('SELECT * FROM `users` WHERE `mail` = :mail;');
+        $sth->bindValue(':mail',$mail);
+        if($sth->execute()){
+            $result = $sth->fetch();
+            if($result){
+                return $result;
+            }
+        }
+        return false;
+    }
 }

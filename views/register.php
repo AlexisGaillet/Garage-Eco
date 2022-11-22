@@ -3,10 +3,17 @@
     <form method="post" class="registerLoginForm flex-column">
         <ul>
             <li><input type="text" placeholder="Prénom" name="firstname" class="flex-row" required></li>
+            <p class="errorText"><?=$error['firstname'] ?? ''?></p>
+
             <li><input type="text" placeholder="Nom" name="lastname" class="flex-row" required></li>
+            <p class="errorText"><?=$error['lastname'] ?? ''?></p>
+
             <li><input type="email" placeholder="Email" name="mail" class="flex-row" required></li>
+            <p class="errorText"><?=$error['mail'] ?? ''?></p>
+
             <li><input type="password" placeholder="Mot de passe" name="password" class="flex-row" required></li>
             <li><input type="password" placeholder="Confirmation du mot de passe" name="confirmPassword" class="flex-row" required></li>
+            <p class="errorText"><?=$error['password'] ?? ''?></p>
         </ul>
         <div class="acceptConditionsContainer flex-row">
             <input type="checkbox" name="acceptConditions" id="acceptConditions" required>

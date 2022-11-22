@@ -60,6 +60,16 @@ body {
 }
 
 
+    /* Session Flash */
+.sessionFlashRed {
+    color: #d80000;
+}
+
+/* Texte en vert */
+.sessionFlashGreen {
+    color: #00d552;
+}
+
 
 
     /* Marge */

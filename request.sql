@@ -101,3 +101,7 @@ CREATE TABLE solutions_steps(
 
     -- INITALISER LE CREATED_AT
 -- Colonne users -> structure -> row created_at -> modifier -> default value : CURRENT_TIMESTAMP
+
+
+    -- Rénitialiser les id à 1
+-- ALTER TABLE `users` AUTO_INCREMENT=1

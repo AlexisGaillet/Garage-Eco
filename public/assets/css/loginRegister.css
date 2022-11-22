@@ -19,7 +19,7 @@
 
 /* Items de la liste */
 .registerLoginForm ul li {
-    margin: 10px 0px;
+    margin: 16px 0 0;
     display: flex;
     justify-content: center;
 }
@@ -58,6 +58,7 @@
     color: #fff;
     font-size: 2rem;
     align-self: center;
+    cursor: pointer;
 }
 
 /* Première ligne du texte sous le bouton */
@@ -70,6 +71,14 @@
 .linkUnderButton {
     color: #888888;
     text-decoration: none;
+}
+
+/* Message d'erreur */
+.errorText {
+    color: red;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 

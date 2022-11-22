@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Validation
     // Validation du prénom ($firstname)
     $isOk = filter_var($firstname, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_NUMBER . '/')));
+    
     // Champ vide
     if (empty($firstname)) {
         $error['firstname'] = 'Vous devez renseigner un prénom';
@@ -51,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validation du nom ($lastname)
     $isOk = filter_var($lastname, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_NUMBER . '/')));
+    
     // Champ vide
     if (empty($lastname)) {
         $error['lastname'] = 'Vous devez renseigner un nom de famille';
@@ -63,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validation de l'email ($mail)
     $isOk = filter_var($mail, FILTER_VALIDATE_EMAIL);
+    
     // Champ vide
     if (empty($mail)) {
         $error['mail'] = 'Vous devez renseigner une adresse mail';
@@ -73,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         // Vérification si l'email existe déjà
         if (User::exist($mail) == true) {
-            $error['mail'] = 'L\'adresse mail existe déjà, connectez-vous ou utilisez une autre adresse mail';
+            $error['mail'] = 'Cet adresse mail existe déjà';
         }
     }
 
@@ -81,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if($password != $confirmPassword) {
         $error['password'] = 'Les mots de passe doivent être identiques';
     } else {
+        // Champ vide
         if(empty($password)){
             $error['password'] = 'Le mot de passe est obligatoire';
         }
@@ -88,17 +92,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // On hash le mot de passe
     $password = password_hash($password, PASSWORD_DEFAULT);
-    
-    echo '<pre>' , var_dump($error) , '</pre>';
 
+
+    // Si il n'y a pas d'erreur
     if (empty($error)){
+        // On crée un nouveau objet User
         $user = new User($firstname, $lastname, $mail, $password);
+        // On enregistre les informations en base de donnée
         $user = $user->set();
+        // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
         if($user){
-            // header('Location: /controllers/signInCtrl.php');
-            // exit;
-            echo '<pre>' , var_dump('Ajouté') , '</pre>';
-            echo '<pre>' , var_dump($user) , '</pre>';
+            SessionFlash::set('Vous êtes inscrit, vous pouvez vous connecter');
+            header('Location: /controllers/login-controller.php');
+            exit;
         }
     }
 
