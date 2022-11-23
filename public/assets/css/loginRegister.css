@@ -24,8 +24,8 @@
     justify-content: center;
 }
 
-/* Inputs du formulaire */
-.registerLoginForm ul li input {
+/* Inputs et select des formulaires */
+.registerLoginForm ul li input, .registerLoginForm ul li select {
     width: 100%;
     max-width: 400px;
     height: 3rem;
@@ -34,6 +34,7 @@
     border: 3px solid #817EFF;
     border-radius: 10px;
     align-items: center;
+    box-sizing: border-box;
 }
 
 /* Container de la checkbox et texte des conditions */

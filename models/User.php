@@ -2,7 +2,7 @@
 
 // Appelle de la base de donnée
 require_once(__DIR__.'/../helpers/database.php');
-// Appelle du fichier de configuration (REGEX, constantes etc...)
+// Appelle du fichier de configuration (Constantes etc...)
 require_once(__DIR__.'/../config/config.php');
 
 class User {
@@ -21,46 +21,47 @@ class User {
         $this->_password = $password;
     }
 
+
     // Getters
-    public function getId(): int {
+    public function getId():int {
         return $this->_id;
     }
 
-    public function getFirstname(): string {
+    public function getFirstname():string {
         return $this->_firstname;
     }
 
-    public function getLastname(): string {
+    public function getLastname():string {
         return $this->_lastname;
     }
 
-    public function getMail(): string {
+    public function getMail():string {
         return $this->_mail;
     }
 
-    public function getPassword(): string {
+    public function getPassword():string {
         return $this->_password;
     }
 
 
     // Setters
-    public function setId(int $id): void {
+    public function setId(int $id):void {
         $this->_id = $id;
     }
 
-    public function setFirstname(string $firstname): void {
+    public function setFirstname(string $firstname):void {
         $this->_firstname = $firstname;
     }
 
-    public function setLastname(string $lastname): void {
+    public function setLastname(string $lastname):void {
         $this->_lastname = $lastname;
     }
 
-    public function setMail(string $mail): void {
+    public function setMail(string $mail):void {
         $this->_mail = $mail;
     }
 
-    public function setPassword(string $password): void {
+    public function setPassword(string $password):void {
         $this->_password = $password;
     }
 

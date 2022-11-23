@@ -1,0 +1,26 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./../img/background404.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 65%;
+}
+
+@media screen and (min-width: 576px) {
+    body {
+        background-position: 40%;
+    }
+}
+
+
+@media screen and (min-width: 996px) {
+    body {
+        background-position: right;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    
+}

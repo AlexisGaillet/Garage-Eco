@@ -4,7 +4,12 @@
     require_once(__DIR__.'/../config/config.php');
     // Appel de la database
     require_once(__DIR__.'/../helpers/database.php');
+    // Classe Car
+    require_once(__DIR__.'/../models/Car.php');
 
+    // Nom du fichier CSS de la page
+    $stylesheet = 'loginRegister';
+    // Titre de la page
     $headTitle = 'Ajouter un véhicule';
 
 
@@ -15,6 +20,6 @@
     // Header
     include(__DIR__.'/../views/templates/header.php');
     // Main
-    include(__DIR__.'/../views/home.php');
+    include(__DIR__.'/../views/addCar.php');
     // Footer
     include(__DIR__.'/../views/templates/footer.php');

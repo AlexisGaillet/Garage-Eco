@@ -60,14 +60,18 @@ body {
 }
 
 
-    /* Session Flash */
-.sessionFlashRed {
+    /* Couleur de texte */
+/* Rouge */
+.textRed {
     color: #d80000;
 }
-
-/* Texte en vert */
-.sessionFlashGreen {
+/* Vert */
+.textGreen {
     color: #00d552;
+}
+/* Gris */
+.textGrey {
+    color: #808080;
 }
 
 
@@ -78,17 +82,14 @@ body {
 .margin-top-10px {
     margin-top: 10px;
 }
-
 /* Marge en haut de 20px */
 .margin-top-20px {
     margin-top: 20px;
 }
-
 /* Marge en bas de 10px */
 .margin-bottom-10px {
     margin-bottom: 10px;
 }
-
 /* Marge en bas de 20px */
 .margin-bottom-20px {
     margin-bottom: 20px;
@@ -102,26 +103,22 @@ body {
     display: flex;
     flex-direction: row;
 }
-
 /* Display flex / row / space between */
 .flex-row-space-between {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
 /* Display flex / column */
 .flex-column {
     display: flex;
     flex-direction: column;
 }
-
 .flex-column-center {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .flex-column-justify-center {
     display: flex;
     flex-direction: column;
