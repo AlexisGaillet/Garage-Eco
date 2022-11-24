@@ -43,4 +43,23 @@ class Brand {
     public function setMostSelled(int $most_selled):void {
         $this->_most_selled = $most_selled;
     }
+
+
+
+
+
+    // Méthodes
+
+    /**
+     * Récupère toutes les marques
+     * @return object
+     */
+    public static function getAll():array|bool {
+        $sth = Database::getInstance()->query('SELECT * FROM `brands` ORDER BY `brands`.`name`;');
+
+        if ($sth -> rowCount() >= 1) {
+            return  $sth->fetchAll();
+        }
+        return false;
+    }
 }

@@ -10,13 +10,11 @@ class Model {
     private int $_id;
     private int $_id_brands;
     private string $_name;
-    private string $_car_year;
 
     // Constructeur
-    public function __construct(int $id_brands, string $name, string $_car_year) {
+    public function __construct(int $id_brands, string $name) {
         $this->_id_brands = $id_brands;
         $this->_name = $name;
-        $this->_car_year = $_car_year;
     }
 
     // Getters
@@ -30,10 +28,6 @@ class Model {
 
     public function getName():string {
         return $this->_name;
-    }
-
-    public function getCarYear():string {
-        return $this->_car_year;
     }
 
 
@@ -50,7 +44,35 @@ class Model {
         $this->_name = $name;
     }
 
-    public function setCarYear(string $car_year):void {
-        $this->_car_year = $car_year;
+
+
+
+
+    // Méthodes
+
+    /**
+     * Récupère tous les modèles d'une marque donnée en paramètre ou tous les modèles si aucun paramètre n'est donné
+     * @param int|null $id_brands
+     * 
+     * @return array
+     */
+    public static function getAll(int $id_brands = null, bool $distinct = false):array|bool {
+        if (!is_null($id_brands)) {
+            if ($distinct) {
+                $sth = Database::getInstance()->prepare('SELECT DISTINCT `models`.`name` FROM `models` WHERE `models`.`id_brands` = :id_brands ORDER BY `models`.`name`');
+            } else {
+                $sth = Database::getInstance()->prepare('SELECT * FROM `models` WHERE `models`.`id_brands` = :id_brands ORDER BY `models`.`name`');
+            }
+            $sth->bindValue(':id_brands', $id_brands, PDO::PARAM_INT);
+            $sth->execute();
+        } else {
+            $sth = Database::getInstance()->query('SELECT * FROM models');
+        }
+
+        if ($sth -> rowCount() >= 1) {
+            return $sth->fetchAll();
+        } else {
+            return false;
+        }
     }
 }

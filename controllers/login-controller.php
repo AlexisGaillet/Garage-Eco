@@ -14,7 +14,7 @@ $headTitle = 'Connexion';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        // Nettage
+        // Nettoyage
     // Nettoyage de l'email ($mail)
     $mail = trim(filter_input(INPUT_POST, 'mail', FILTER_SANITIZE_EMAIL));
     // (On ne nettoie pas les mots de passe) ($password)

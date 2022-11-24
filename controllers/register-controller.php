@@ -21,7 +21,7 @@ $headTitle = 'Inscription';
 // Si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        // Nettage
+        // Nettoyage
     // Nettoyage du prénom ($firstname)
     $firstname = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
     // Nettoyage du nom ($lastname)

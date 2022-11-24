@@ -14,7 +14,7 @@ CREATE TABLE brands(
 CREATE TABLE models(
     Id_models INT AUTO_INCREMENT,
     name VARCHAR(20) NOT NULL,
-    car_year VARCHAR(10) NOT NULL,
+    car_year VARCHAR(15),
     Id_brands INT NOT NULL,
     PRIMARY KEY(Id_models),
     FOREIGN KEY(Id_brands) REFERENCES brands(Id_brands)
@@ -46,7 +46,7 @@ CREATE TABLE solutions(
 
 CREATE TABLE types(
     Id_types INT AUTO_INCREMENT,
-    engine_type INT NOT NULL,
+    engine_type VARCHAR(25) NOT NULL,
     motorization SMALLINT NOT NULL,
     PRIMARY KEY(Id_types)
 );
@@ -111,7 +111,32 @@ VALUES (NULL, 'Audi', '1'),
 (NULL, 'Mercedes-Benz', '1'),
 (NULL, 'BMW', '1'),
 (NULL, 'Bugatti', '0'),
-(NULL, 'Dodge', '0');
+(NULL, 'Dodge', '0'),
+(NULL, 'Renault', '1'),
+(NULL, 'Volkswagen', '1'),
+(NULL, 'Alpine', '0'),
+(NULL, 'Alpha Romeo', '0'),
+(NULL, 'Kia', '0'),
+(NULL, 'Toyota', '0'),
+(NULL, 'Porsche', '0');
+
+
+INSERT INTO `models` (`Id_models`, `name`, `car_year`, `Id_brands`)
+VALUES
+-- Model Audi
+(NULL, 'A3', '(2013-2018)', '1'),
+(NULL, 'A3', '(2018-...)', '1'),
+(NULL, 'A1', '(2009-2015)', '1'),
+(NULL, 'A1', '(2015-2021)', '1'),
+(NULL, 'A1', '(2021-...)', '1'),
+(NULL, 'A4', '(2014-2020)', '1'),
+(NULL, 'A4', '(2020-...)', '1'),
+-- Model Mercedes-Benz
+(NULL, '190', '(1982-1993)', '2'),
+(NULL, 'Classe A', '(2004-2012)', '2'),
+(NULL, 'Classe A', '(2012-2018)', '2'),
+(NULL, 'Classe A', '(2018-...)', '2');
+
 
 
 INSERT INTO `users` (`Id_users`, `firstname`, `lastname`, `mail`, `password`, `created_at`, `valided_at`) VALUES (NULL, 'Alexis', 'Gaillet', 'alexisgaillet36@gmail.com', '$2y$10$DVi59IBra7c0eTTFXav5iOIMHLdWil85h.6Bx4/AWMhB2HZmkAnfO', NULL, NULL);

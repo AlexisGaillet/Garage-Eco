@@ -43,4 +43,31 @@ class Type {
     public function setMotorization(int $motorization):void {
         $this->_motorization = $motorization;
     }
+
+
+
+
+
+    // Méthodes
+
+    /**
+     * Récupère tous les types de moteurs d'un model donné en paramètre ou tous les types de moteurs si aucun paramètre n'est donné
+     * @param int|null $id_brands
+     * 
+     * @return array
+     */
+    public static function getAll(int $id_models = null):array|bool {
+        if ($id_models) {
+            $sth = Database::getInstance()->prepare('SELECT * FROM models WHERE id_models = :id_models');
+            $sth->bindValue(':id_models', $id_models, PDO::PARAM_INT);
+        } else {
+            $sth = Database::getInstance()->query('SELECT * FROM models');
+        }
+
+        if ($sth -> rowCount() >= 1) {
+            return $sth->fetchAll();
+        } else {
+            return false;
+        }
+    }
 }

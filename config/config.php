@@ -9,6 +9,7 @@ require_once(__DIR__.'/../helpers/SessionFlash.php');
 
 // Déclaration des Regex
 define('REGEX_NO_NUMBER', "^[a-zA-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜàáâãäåæçèéêëìíîïñòóôõöùúûüýÿ '-]+$");
+define('REGEX_NO_SPECIAL_CHAR', "^[a-zA-Z1-9ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜàáâãäåæçèéêëìíîïñòóôõöùúûüýÿ '-]+$");
 define('REGEX_PASSWORD', "(?=.[A-Z])(?=.\d)(?=.[!@#$&])[A-Za-z\d!@#$&*]{8,}");
 define('REGEX_EMAIL', "^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
 
