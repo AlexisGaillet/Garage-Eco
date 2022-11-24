@@ -4,7 +4,7 @@
     <!-- Ligne séparatrice -->
     <div class="line"></div>
     <!-- Titre de la section -->
-    <h3 class="sectionTitle">Comment voulez-vous réparer vôtre véhicule ?</h3>
+    <h3 class="sectionTitle">Comment voulez-vous réparer votre véhicule ?</h3>
     <!-- Contenant les choix -->
     <div class="boxContainer">
         <!-- Bordure du premier choix -->

@@ -17,7 +17,7 @@
         </ul>
         <div class="acceptConditionsContainer flex-row">
             <input type="checkbox" name="acceptConditions" id="acceptConditions" required>
-            <label for="acceptConditions">J'ai lu et j'accêpte <a href="XXXXXXXXXXXXX">les conditions</a></label>
+            <label for="acceptConditions">J'ai lu et j'accepte <a href="XXXXXXXXXXXXX">les conditions</a></label>
         </div>
         <input type="submit" value="Inscription" class="registerLoginButton">
         <div class="linkUnderButtonContainer">
