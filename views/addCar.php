@@ -12,7 +12,7 @@
 
                 <optgroup label="Constructeurs les plus vendus">
                     <?php
-                        foreach ($brandList as $brand) {
+                        foreach (Brand::getAll() as $brand) {
                             if ($brand->most_selled == 1) { ?>
                                 <option value="<?=$brand->id?>"><?=$brand->name?></option>
                             <?php }
@@ -23,7 +23,7 @@
 
                 <optgroup label="Constructeurs de A à Z">
                     <?php
-                        foreach ($brandList as $brand) { ?>
+                        foreach (Brand::getAll() as $brand) { ?>
                             <option value="<?=$brand->id?>"><?=$brand->name?></option>
                         <?php }
                     ?>
@@ -38,11 +38,12 @@
                 <option disabled selected hidden value="">Modèle</option>
 
 
-                <?php
-                    foreach (Model::getAll(1,$distinct = true) as $distinctModel) { ?>
+                    <?php foreach (Model::getAll($id_brands, $distinct = true) as $distinctModel) { ?>
                         <optgroup label="<?=$distinctModel->name?>">
                             <?php
-                            
+                                foreach (Model::getAll($id_brands, $distinct = false, $where = $distinctModel->name) as $model) { ?>
+                                    <option value="<?=$model->id?>"><?=$model->name?> <?=$model->car_year?></option>
+                                <?php }
                             ?>
                         </optgroup>
                     <?php } ?>

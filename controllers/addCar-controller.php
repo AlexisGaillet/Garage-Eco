@@ -13,10 +13,7 @@ $stylesheet = 'loginRegister';
 // Titre de la page
 $headTitle = 'Ajouter un véhicule';
 
-$brandList = Brand::getAll();
-$modelListOptgroup = Model::getAll(1, true);
-$modelList = Model::getAll(1);
-
+$id_brands = 1;
 
 // Si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

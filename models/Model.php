@@ -51,23 +51,43 @@ class Model {
     // Méthodes
 
     /**
-     * Récupère tous les modèles d'une marque donnée en paramètre ou tous les modèles si aucun paramètre n'est donné
+     * Récupère tous les modèles
      * @param int|null $id_brands
      * 
      * @return array
      */
-    public static function getAll(int $id_brands = null, bool $distinct = false):array|bool {
+    public static function getAll(int $id_brands = null, bool $distinct = false, $where = false):array|bool {
+        // On veut afficher tous les modèles d'une marque
         if (!is_null($id_brands)) {
+            // Si il existe 2 fois le même modèle pour une marque, on ne veut l'afficher qu'une seule fois
             if ($distinct) {
-                $sth = Database::getInstance()->prepare('SELECT DISTINCT `models`.`name` FROM `models` WHERE `models`.`id_brands` = :id_brands ORDER BY `models`.`name`');
+                $sql = 'SELECT DISTINCT `models`.`name` FROM `models` WHERE `models`.`id_brands` = :id_brands ORDER BY `models`.`name`;';
             } else {
-                $sth = Database::getInstance()->prepare('SELECT * FROM `models` WHERE `models`.`id_brands` = :id_brands ORDER BY `models`.`name`');
+                $sql = 'SELECT * FROM `models` WHERE `models`.`id_brands` = :id_brands ORDER BY `models`.`name`;';
             }
+
+            if ($where != false) {
+                $sql = 'SELECT * FROM `models` WHERE `models`.`id_brands` = :id_brands AND `models`.`name` = :name ORDER BY `models`.`name`';
+            }
+
+            $sth = Database::getInstance()->prepare($sql);
+
+            if ($where != false) {
+                $sth->bindValue(':name', $where);
+            }
+
             $sth->bindValue(':id_brands', $id_brands, PDO::PARAM_INT);
             $sth->execute();
+
+        // On veut afficher tout les modèles
         } else {
-            $sth = Database::getInstance()->query('SELECT * FROM models');
+            $sql = '\'SELECT * FROM `models`;\'';
+            $sth = Database::getInstance()->query($sql);
         }
+
+
+
+
 
         if ($sth -> rowCount() >= 1) {
             return $sth->fetchAll();
