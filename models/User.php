@@ -12,13 +12,15 @@ class User {
     private string $_lastname;
     private string $_mail;
     private string $_password;
+    private int $_admin;
 
     // Constructeur
-    public function __construct(string $firstname, string $lastname, string $mail, string $password) {
+    public function __construct(string $firstname, string $lastname, string $mail, string $password, int $admin = 0) {
         $this->_firstname = $firstname;
         $this->_lastname = $lastname;
         $this->_mail = $mail;
         $this->_password = $password;
+        $this->_admin = $admin;
     }
 
 
@@ -43,6 +45,10 @@ class User {
         return $this->_password;
     }
 
+    public function getAdmin():int {
+        return $this->_admin;
+    }
+
 
     // Setters
     public function setId(int $id):void {
@@ -63,6 +69,10 @@ class User {
 
     public function setPassword(string $password):void {
         $this->_password = $password;
+    }
+
+    public function setAdmin(int $admin):void {
+        $this->_admin = $admin;
     }
 
 
@@ -97,8 +107,8 @@ class User {
     public function set(int $id = null):User|bool{
         // Si l'id est null, on crée un nouvel utilisateur
         if(is_null($id)){
-            $sql = 'INSERT INTO `users` (`firstname`, `lastname`, `mail`, `password`) 
-                    VALUES (:firstname, :lastname, :mail, :password);';
+            $sql = 'INSERT INTO `users` (`firstname`, `lastname`, `mail`, `password`, `admin`) 
+                    VALUES (:firstname, :lastname, :mail, :password, :admin);';
         // Sinon on c'est qu'on veut modifier l'utilisateur
         } else {
             // $sql = 'UPDATE';
@@ -108,6 +118,7 @@ class User {
         $sth->bindValue(':lastname', $this->_lastname);
         $sth->bindValue(':mail', $this->_mail);
         $sth->bindValue(':password', $this->_password);
+        $sth->bindValue(':admin', $this->_admin, PDO::PARAM_INT);
         if($sth->execute()){
             // On récupère l'id de l'utilisateur créé et on le set dans l'objet User
             if(is_null($id)){
@@ -123,7 +134,7 @@ class User {
 
     /**
      * Méthode qui permet de récupérer un utilisateur en fonction de son email
-     * @param string $email
+     * @param string $mail
      * 
      * @return object
      */

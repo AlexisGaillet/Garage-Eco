@@ -28,6 +28,7 @@ CREATE TABLE users(
     password VARCHAR(255) NOT NULL,
     created_at DATETIME,
     valided_at DATETIME,
+    admin BOOLEAN DEFAULT 0,
     PRIMARY KEY(Id_users)
 );
 
@@ -139,7 +140,7 @@ VALUES
 
 
 
-INSERT INTO `users` (`Id_users`, `firstname`, `lastname`, `mail`, `password`, `created_at`, `valided_at`) VALUES (NULL, 'Alexis', 'Gaillet', 'alexisgaillet36@gmail.com', '$2y$10$DVi59IBra7c0eTTFXav5iOIMHLdWil85h.6Bx4/AWMhB2HZmkAnfO', NULL, NULL);
+INSERT INTO `users` (`Id_users`, `firstname`, `lastname`, `mail`, `password`, `created_at`, `valided_at`, `admin`) VALUES (NULL, 'Alexis', 'Gaillet', 'alexisgaillet36@gmail.com', '$2y$10$DVi59IBra7c0eTTFXav5iOIMHLdWil85h.6Bx4/AWMhB2HZmkAnfO', NULL, NULL, 1);
 
 
 

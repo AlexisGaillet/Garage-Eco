@@ -3,7 +3,7 @@
     <h4 class="textGreen"><?php if (SessionFlash::exist()) { echo SessionFlash::get(); } ?></h4>
     <form method="post" class="registerLoginForm flex-column">
         <ul>
-            <li><input type="email" placeholder="Email" name="mail" class="flex-row" required></li>
+            <li><input type="email" placeholder="Email" value="<?=$mail ?? ''?>" name="mail" class="flex-row" required></li>
             <p class="errorText"><?=$error['mail'] ?? ''?></p>
 
             <li><input type="password" placeholder="Mot de passe" name="password" class="flex-row" required></li>

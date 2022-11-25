@@ -32,6 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = filter_input(INPUT_POST, 'password');
     // ($confirmPassword)
     $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
+    
+    // Acceptation des conditions ($acceptConditions)
+    $acceptConditions = filter_input(INPUT_POST, 'acceptConditions', FILTER_VALIDATE_BOOLEAN);
 
 
 
@@ -50,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+
     // Validation du nom ($lastname)
     $isOk = filter_var($lastname, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_NUMBER . '/')));
     
@@ -62,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error['lastname'] = 'Le nom n\'est pas valide';
         }
     }
+
 
     // Validation de l'email ($mail)
     $isOk = filter_var($mail, FILTER_VALIDATE_EMAIL);
@@ -80,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+
     // Vérification si les mots de passe sont identiques
     if($password != $confirmPassword) {
         $error['password'] = 'Les mots de passe doivent être identiques';
@@ -92,6 +98,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // On hash le mot de passe
     $password = password_hash($password, PASSWORD_DEFAULT);
+
+
+    // Validation des conditions ($acceptConditions)
+    $isOk = filter_var($acceptConditions, FILTER_VALIDATE_BOOLEAN);
+
+    // Champ vide
+    if (empty($acceptConditions)) {
+        $error['acceptConditions'] = 'Vous devez accepter les conditions d\'utilisation';
+    } else {
+        // Conditions non acceptées
+        if (!$isOk) {
+            $error['acceptConditions'] = 'Vous devez accepter les conditions d\'utilisation';
+        }
+    }
+
 
 
     // Si il n'y a pas d'erreur

@@ -44,14 +44,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // On récupère les infos de l'utilisateur grâce à soin email qu'il vient de rentrer
         $user = User::getByEmail($mail);
         // On récupère le mot de passe qui est crypté
-        $hashedPassword = $user -> password;
-        // On vérifie avec cette fonction si le mdp clair et le même que le mdp crypé qui vient de la base de donnée
-        $passwordIsGood = password_verify($password, $hashedPassword);
-
-        // Si les deux mot de passe ne sont pas identiques on met une erreur
-        if ($passwordIsGood == false) {
-            $error['password'] = 'Les informations des connexion ne sont pas bonnes!';
+        if ($user) {
+            $hashedPassword = $user -> password;
+            // On vérifie avec cette fonction si le mdp clair et le même que le mdp crypé qui vient de la base de donnée
+            $passwordIsGood = password_verify($password, $hashedPassword);
+            // Si les deux mot de passe ne sont pas identiques on met une erreur
+            if ($passwordIsGood == false) {
+                $error['password'] = 'L\'adresse mail ou le mot de passe est incorrect';
+            }
+        } else {
+            $error['password'] = 'L\'adresse mail ou le mot de passe est incorrect';
         }
+
     }
 
 
