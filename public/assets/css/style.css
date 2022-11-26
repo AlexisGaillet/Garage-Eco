@@ -96,6 +96,73 @@ body {
 }
 
 
+    /* Taille de texte */
+/* Texte de 0.5 */
+.font-size-0-5rem {
+    font-size: 0.5rem;
+}
+/* Texte de 0.6 */
+.font-size-0-6rem {
+    font-size: 0.6rem;
+}
+/* Texte de 0.7 */
+.font-size-0-7rem {
+    font-size: 0.7rem;
+}
+/* Texte de 0.8 */
+.font-size-0-8rem {
+    font-size: 0.8rem;
+}
+/* Texte de 0.9 */
+.font-size-0-9rem {
+    font-size: 0.9rem;
+}
+/* Texte de 1rem */
+.font-size-1rem {
+    font-size: 1rem;
+}
+/* Texte de 1.1rem */
+.font-size-1-1rem {
+    font-size: 1.1rem;
+}
+/* Texte de 1.2rem */
+.font-size-1-2rem {
+    font-size: 1.2rem;
+}
+/* Texte de 1.3rem */
+.font-size-1-3rem {
+    font-size: 1.3rem;
+}
+/* Texte de 1.4rem */
+.font-size-1-4rem {
+    font-size: 1.4rem;
+}
+/* Texte de 1.5rem */
+.font-size-1-5rem {
+    font-size: 1.5rem;
+}
+/* Texte de 1.6rem */
+.font-size-1-6rem {
+    font-size: 1.6rem;
+}
+/* Texte de 1.7rem */
+.font-size-1-7rem {
+    font-size: 1.7rem;
+}
+/* Texte de 1.8rem */
+.font-size-1-8rem {
+    font-size: 1.8rem;
+}
+/* Texte de 1.9rem */
+.font-size-1-9rem {
+    font-size: 1.9rem;
+}
+/* Texte de 2rem */
+.font-size-2rem {
+    font-size: 2rem;
+}
+
+
     /* Display */
 
 /* Display flex / row */
