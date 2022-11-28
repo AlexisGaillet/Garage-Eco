@@ -81,14 +81,11 @@ class Model {
 
         // On veut afficher tout les modèles
         } else {
-            $sql = '\'SELECT * FROM `models`;\'';
+            $sql = 'SELECT * FROM `models`;';
             $sth = Database::getInstance()->query($sql);
         }
 
-
-
-
-
+        // Si cela retourne 1 ou plusieurs lignes on les retourne sous forme de tableau d'objets sinon on retourne false
         if ($sth -> rowCount() >= 1) {
             return $sth->fetchAll();
         } else {

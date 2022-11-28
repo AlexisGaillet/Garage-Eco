@@ -1,7 +1,6 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Ajouter un véhicule</h2>
     <?php
-
     ?>
     <form method="post" class="registerLoginForm flex-column">
         <ul>
@@ -37,7 +36,6 @@
 
                 <option disabled selected hidden value="">Modèle</option>
 
-
                     <?php foreach (Model::getAll($id_brands, $distinct = true) as $distinctModel) { ?>
                         <optgroup label="<?=$distinctModel->name?>">
                             <?php
@@ -48,18 +46,6 @@
                         </optgroup>
                     <?php } ?>
 
-
-                <!-- <optgroup label="A3">
-                    <option>A3 (2013-2018)</option>
-                    <option>A3 Sportback (2018-...)</option>
-                </optgroup>
-
-                <optgroup label="A4">
-                    <option>A4 (2008-2013)</option>
-                    <option>A3 Sportback (2013-2018)</option>
-                    <option>A3 Sportback (2018-...)</option>
-                </optgroup> -->
-
             </select></li>
             <p class="errorText"><?=$error['model'] ?? ''?></p>
 
@@ -69,7 +55,18 @@
                 <option disabled selected hidden value="">Motorisation</option>
 
 
-                <optgroup label="Diesel">
+                <?php foreach (Type::getAll($id_models, $distinct = true) as $distinctType) { ?>
+                    <optgroup label="<?=$type_array[$distinctType->motorization]?>">
+                        <?php
+                            foreach (Type::getAll($id_models, $distinct = false, $where = $distinctType->motorization) as $type) { ?>
+                                <option value="<?=$type->id?>"><?=$type->engine_type?></option>
+                            <?php }
+                        ?>
+                    </optgroup>
+                <?php } ?>
+
+
+                <!-- <optgroup label="Diesel">
                     <option>1.6 TDI (105 CH)</option>
                     <option>1.6 TDI (110 CH)</option>
                     <option>2.0 TDI (150 CH)</option>
@@ -83,7 +80,7 @@
 
                 <optgroup label="Hybride">
                     <option>1.4 TFSI e-tron (150 CH)</option>
-                </optgroup>
+                </optgroup> -->
             </select></li>
             <p class="errorText"><?=$error['type'] ?? ''?></p>
         </ul>

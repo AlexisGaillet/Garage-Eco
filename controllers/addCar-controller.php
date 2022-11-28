@@ -2,11 +2,14 @@
 
 // Appel du fichier config
 require_once(__DIR__.'/../config/config.php');
+
+require_once(__DIR__.'/../helpers/array/type-array.php');
 // Appel de la database
 require_once(__DIR__.'/../helpers/database.php');
 // Classe Car
 require_once(__DIR__.'/../models/Brand.php');
 require_once(__DIR__.'/../models/Model.php');
+require_once(__DIR__.'/../models/Type.php');
 
 // Nom du fichier CSS de la page
 $stylesheet = 'loginRegister';
@@ -14,6 +17,7 @@ $stylesheet = 'loginRegister';
 $headTitle = 'Ajouter un véhicule';
 
 $id_brands = 1;
+$id_models = 1;
 
 // Si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

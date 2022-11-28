@@ -56,14 +56,51 @@ class Type {
      * 
      * @return array
      */
-    public static function getAll(int $id_models = null):array|bool {
-        if ($id_models) {
-            $sth = Database::getInstance()->prepare('SELECT * FROM models WHERE id_models = :id_models');
+    // public static function getAll(int $id_models = null):array|bool {
+    //     if ($id_models) {
+    //         $sth = Database::getInstance()->prepare('SELECT * FROM models WHERE id_models = :id_models');
+    //         $sth->bindValue(':id_models', $id_models, PDO::PARAM_INT);
+    //     } else {
+    //         $sth = Database::getInstance()->query('SELECT * FROM models');
+    //     }
+
+    //     if ($sth -> rowCount() >= 1) {
+    //         return $sth->fetchAll();
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+    public static function getAll(int $id_models = null, bool $distinct = false, $where = false):array|bool {
+        // On veut afficher tous les types d'un model
+        if (!is_null($id_models)) {
+            // Si il existe 2 fois le même type pour un model, on ne veut l'afficher qu'une seule fois
+            if ($distinct) {
+                $sql = 'SELECT DISTINCT `types`.`motorization` FROM `types` WHERE `types`.`id_models` = :id_models ORDER BY `types`.`motorization`;';
+            } else {
+                $sql = 'SELECT * FROM `types` WHERE `types`.`id_models` = :id_models ORDER BY `models`.`name`;';
+            }
+
+            if ($where != false) {
+                $sql = 'SELECT * FROM `types` WHERE `types`.`id_models` = :id_models AND `types`.`motorization` = :motorization ORDER BY `types`.`engine_type`;';
+            }
+
+            $sth = Database::getInstance()->prepare($sql);
+
+            if ($where != false) {
+                $sth->bindValue(':motorization', $where, PDO::PARAM_INT);
+            }
+
             $sth->bindValue(':id_models', $id_models, PDO::PARAM_INT);
+            $sth->execute();
+
+        // On veut afficher tout les types
         } else {
-            $sth = Database::getInstance()->query('SELECT * FROM models');
+            $sql = 'SELECT * FROM `types`;';
+            $sth = Database::getInstance()->query($sql);
         }
 
+        // Si cela retourne 1 ou plusieurs lignes on les retourne sous forme de tableau d'objets sinon on retourne false
         if ($sth -> rowCount() >= 1) {
             return $sth->fetchAll();
         } else {

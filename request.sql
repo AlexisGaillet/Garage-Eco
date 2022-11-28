@@ -49,7 +49,9 @@ CREATE TABLE types(
     Id_types INT AUTO_INCREMENT,
     engine_type VARCHAR(25) NOT NULL,
     motorization SMALLINT NOT NULL,
-    PRIMARY KEY(Id_types)
+    Id_models INT NOT NULL,
+    PRIMARY KEY(Id_types),
+    FOREIGN KEY(Id_models) REFERENCES models(Id_models)
 );
 
 CREATE TABLE steps(
@@ -108,7 +110,8 @@ CREATE TABLE solutions_steps(
 
 
 INSERT INTO `brands` (`Id_brands`, `name`, `most_selled`)
-VALUES (NULL, 'Audi', '1'),
+VALUES
+(NULL, 'Audi', '1'),
 (NULL, 'Mercedes-Benz', '1'),
 (NULL, 'BMW', '1'),
 (NULL, 'Bugatti', '0'),
@@ -137,6 +140,20 @@ VALUES
 (NULL, 'Classe A', '(2004-2012)', '2'),
 (NULL, 'Classe A', '(2012-2018)', '2'),
 (NULL, 'Classe A', '(2018-...)', '2');
+
+
+INSERT INTO `types` (`Id_types`, `engine_type`, `motorization`, `Id_models`)
+VALUES
+-- Type Audi A3 (2013-2018)
+(NULL, '1.6 TDI (105 CH)', '1', '1'),
+(NULL, '1.6 TDI (110 CH)', '1', '1'),
+(NULL, '2.0 TDI (150 CH)', '1', '1'),
+(NULL, '2.0 TDI (184 CH)', '1', '1'),
+
+(NULL, '1.4 TFSI (125 CH)', '2', '1'),
+(NULL, '1.8 TFSI (180 CH)', '2', '1'),
+
+(NULL, '1.4 TFSI e-tron (150 CH)', '3', '1');
 
 
 
