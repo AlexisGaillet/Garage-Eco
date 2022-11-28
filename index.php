@@ -1,4 +1,4 @@
 <?php
     
-    header('Location: /controllers/home-controller.php');
+    header('Location: /accueil');
     exit;

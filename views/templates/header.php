@@ -27,27 +27,27 @@
         <!-- Container de la navbar entière (logo et barre de nav) -->
         <nav class="navbarContainer">
             <!-- Logo -->
-            <a href="/controllers/home-controller.php" class="linkLogo"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
+            <a href="/" class="linkLogo"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
 
             <!-- Container des liens de la navbar -->
             <ul class="nav-menu">
                 <!-- Liens de la navbar -->
                 <li class="nav-item no-decoration">
-                    <a href="/controllers/addCar-controller.php" class="nav-link no-decoration">Ajouter un véhicule</a>
+                    <a href="/ajouter-un-vehicule" class="nav-link no-decoration">Ajouter un véhicule</a>
                 </li>
                 <li class="nav-item no-decoration">
-                    <a href="/controllers/home-controller.php" class="nav-link no-decoration">Accueil</a>
+                    <a href="/" class="nav-link no-decoration">Accueil</a>
                 </li>
                 <?php if (!isset($_SESSION['user'])) { ?>
                     <li class="nav-item no-decoration">
-                        <a href="/controllers/register-controller.php" class="nav-link no-decoration">Inscription</a>
+                        <a href="/inscription" class="nav-link no-decoration">Inscription</a>
                     </li>
                     <li class="nav-item no-decoration">
-                        <a href="/controllers/login-controller.php" class="nav-link no-decoration">Connexion</a>
+                        <a href="/connexion" class="nav-link no-decoration">Connexion</a>
                     </li>
                 <?php } elseif (isset($_SESSION['user'])) { ?>
                     <li class="nav-item no-decoration">
-                        <a href="/controllers/logout-controller.php" class="nav-link no-decoration">Déconnexion</a>
+                        <a href="/deconnexion" class="nav-link no-decoration">Déconnexion</a>
                     </li>
                 <?php } ?>
             </ul>

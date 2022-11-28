@@ -21,7 +21,7 @@
         <div class="errorContainer">
             <h1 class="errorTitle">404</h1>
             <p class="errorText">La page que vous recherchez n'existe pas.</p>
-            <a href="./../index.php" class="errorLink">Retourner à l'accueil</a>
+            <a href="/" class="errorLink">Retourner à l'accueil</a>
         </div>
     </main>
 </body>

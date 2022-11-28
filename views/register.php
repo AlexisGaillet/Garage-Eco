@@ -17,14 +17,14 @@
         </ul>
         <div class="acceptConditionsContainer flex-row">
             <input type="checkbox" name="acceptConditions" id="acceptConditions" <?= (isset($acceptConditions) && $acceptConditions == true) ? 'checked' : ''; ?> required>
-            <label for="acceptConditions">J'ai lu et j'accepte <a href="XXXXXXXXXXXXX">les conditions</a></label><span class="textRed font-size-1-6rem">*</span>
+            <label for="acceptConditions">J'ai lu et j'accepte <a href="/cgu" target="_blank">les conditions</a></label><span class="textRed font-size-1-6rem">*</span>
         </div>
         <p class="errorText"><?=$error['acceptConditions'] ?? ''?></p>
         <p class="font-size-0-9rem"><span class="textRed">*</span>(Champs obligatoire)</p>
         <input type="submit" value="Inscription" class="registerLoginButton">
         <div class="linkUnderButtonContainer">
             <p>Vous avez déjà un compte ?</p>
-            <a href="/controllers/login-controller.php" class="linkUnderButton">Cliquez pour vous connecter</a>
+            <a href="/connexion" class="linkUnderButton">Cliquez pour vous connecter</a>
         </div>
     </form>
 </main>

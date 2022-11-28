@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // On créer une Session avec les ses données (sans le mdp)
         $_SESSION['user'] = $user;
         // On le redirige à l'accueil
-        header('Location: /controllers/home-controller.php');
+        header('Location: /');
     }
 
 

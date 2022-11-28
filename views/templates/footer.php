@@ -2,9 +2,9 @@
     <!-- Première ligne -->
     <div class="rowFooter1 flex-row-space-between">
         <!-- Logo cliquable -->
-        <a href="??????" target="_blank"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
+        <a href="/"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
         <!-- "Site crée par..." avec lien vers le CV numérique -->
-        <p class="tp1zdlQ">Site crée par <a href="" target="_blank">Alexis Gaillet</a></p>
+        <p class="tp1zdlQ">Site crée par <a href="https://alexis-plus.fr/" target="_blank">Alexis Gaillet</a></p>
     </div>
     <!-- Deuxième ligne -->
     <div class="rowFooter2 flex-row">
@@ -24,15 +24,15 @@
         <p class="footerTextTitle">Notre Partenaire</p>
         <!-- Partenaire -->
         <div class="partnerContainer">
-            <a href="?????" target="_blank"><div class="lavagEco">
+            <a href="https://d-tailing.alexisferrer.fr/" target="_blank"><div class="lavagEco">
                 <p>D'Tailing</p>
             </div></a>
         </div>
     </div>
     <!-- Quatrième ligne -->
     <div class="rowFooter4 flex-row">
-        <a href="?????">Conditions d'utilisation</a>
-        <a href="?????">Mentions légales</a>
+        <a href="/cgu">Conditions d'utilisation</a>
+        <a href="/mention-legales">Mentions légales</a>
     </div>
 </footer>
 </body>

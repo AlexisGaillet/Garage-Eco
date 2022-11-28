@@ -3,5 +3,5 @@ session_start();
 
 unset($_SESSION['user']);
 
-header('Location: /controllers/home-controller.php');
+header('Location: /');
 die;

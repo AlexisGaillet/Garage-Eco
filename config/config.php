@@ -1,7 +1,5 @@
 <?php
 
-// Session start pour les Sessions flash
-session_start();
 // Récupération de la class session flash içi car on appelle toujours config.php
 require_once(__DIR__.'/../helpers/SessionFlash.php');
 

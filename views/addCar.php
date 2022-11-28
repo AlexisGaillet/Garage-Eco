@@ -1,7 +1,6 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Ajouter un véhicule</h2>
-    <?php
-    ?>
+
     <form method="post" class="registerLoginForm flex-column">
         <ul>
             <li><select name="brand" id="brand" required>
