@@ -65,22 +65,6 @@
                     </optgroup>
                 <?php } ?>
 
-
-                <!-- <optgroup label="Diesel">
-                    <option>1.6 TDI (105 CH)</option>
-                    <option>1.6 TDI (110 CH)</option>
-                    <option>2.0 TDI (150 CH)</option>
-                    <option>2.0 TDI (184 CH)</option>
-                </optgroup>
-
-                <optgroup label="Essence">
-                    <option>1.4 TFSI (125 CH)</option>
-                    <option>1.8 TFSI (180 CH)</option>
-                </optgroup>
-
-                <optgroup label="Hybride">
-                    <option>1.4 TFSI e-tron (150 CH)</option>
-                </optgroup> -->
             </select></li>
             <p class="errorText"><?=$error['type'] ?? ''?></p>
         </ul>

@@ -123,16 +123,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $user->set();
         // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
         if($user){
-            SessionFlash::set('Vous êtes inscrit, vous pouvez vous connecter');
+            SessionFlash::setGood('Vous êtes inscrit, vous pouvez vous connecter');
             header('Location: /controllers/login-controller.php');
             exit;
         }
     }
-
-
-
-
-
 }
 
 

@@ -1,6 +1,9 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Connexion</h2>
-    <h4 class="textGreen"><?php if (SessionFlash::exist()) { echo SessionFlash::get(); } ?></h4>
+
+    <!-- Message Flash -->
+    <?php if (SessionFlash::existGood()) { ?> <h4 class="textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
+    
     <form method="post" class="registerLoginForm flex-column">
         <ul>
             <li><input type="email" placeholder="Email" value="<?=$mail ?? ''?>" name="mail" class="flex-row" required></li>

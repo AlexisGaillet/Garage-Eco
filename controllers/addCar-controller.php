@@ -3,10 +3,16 @@
 // Appel du fichier config
 require_once(__DIR__.'/../config/config.php');
 
+
+if (isset($_SESSION['user'])) {
+
+// Appel du tableau poure le nom des types de moteurs
 require_once(__DIR__.'/../helpers/array/type-array.php');
+
 // Appel de la database
 require_once(__DIR__.'/../helpers/database.php');
-// Classe Car
+
+// Classe Marque, Modèle et Type
 require_once(__DIR__.'/../models/Brand.php');
 require_once(__DIR__.'/../models/Model.php');
 require_once(__DIR__.'/../models/Type.php');
@@ -16,8 +22,15 @@ $stylesheet = 'loginRegister';
 // Titre de la page
 $headTitle = 'Ajouter un véhicule';
 
+
+
+
+// id de la marque et du modèle en brut, à remplacer par les valeurs récupérées en AJAX
 $id_brands = 1;
 $id_models = 1;
+
+
+
 
 // Si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -83,3 +96,8 @@ include(__DIR__.'/../views/templates/header.php');
 include(__DIR__.'/../views/addCar.php');
 // Footer
 include(__DIR__.'/../views/templates/footer.php');
+
+} else {
+    SessionFlash::setError('Vous devez être connecté pour accéder à cette page');
+    header('Location: /controllers/login-controller.php');
+}

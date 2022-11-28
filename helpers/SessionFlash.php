@@ -3,15 +3,30 @@
 class SessionFlash
 {
     /**
-     * Permet de définir un message flash (message d'erreur ou de succès)
+     * Permet de définir un message flash (message d'erreur)
      * @param string $message
      * 
      * @return void
      */
-    public static function set(string $message): void
+    public static function setError(string $message): void
     {
-        $_SESSION['message'] = $message;
+        $_SESSION['messageError'] = $message;
     }
+
+    /**
+     * Permet de définir un message flash (message de succès)
+     * @param string $message
+     * 
+     * @return void
+     */
+    public static function setGood(string $message): void
+    {
+        $_SESSION['messageGood'] = $message;
+    }
+
+
+
+
 
     /**
      * Permet de récupérer le message flash et va le supprimer de la session
@@ -19,7 +34,11 @@ class SessionFlash
      */
     public static function get(): string
     {
-        $message = $_SESSION['message'];
+        if (isset($_SESSION['messageError'])) {
+            $message = $_SESSION['messageError'];
+        } elseif (isset($_SESSION['messageGood'])) {
+            $message = $_SESSION['messageGood'];
+        }
         self::delete();
         return $message;
     }
@@ -30,16 +49,33 @@ class SessionFlash
      */
     public static function delete(): void
     {
-        unset($_SESSION['message']);
+        if (isset($_SESSION['messageError'])) {
+            unset($_SESSION['messageError']);
+        } elseif (isset($_SESSION['messageGood'])) {
+            unset($_SESSION['messageGood']);
+        }
+    }
+
+
+
+
+
+    /**
+     * Permet de savoir si un message flash existe
+     * @return bool
+     */
+    public static function existError(): bool
+    {
+        return isset($_SESSION['messageError']);
     }
 
     /**
      * Permet de savoir si un message flash existe
      * @return bool
      */
-    public static function exist(): bool
+    public static function existGood(): bool
     {
-        return isset($_SESSION['message']);
+        return isset($_SESSION['messageGood']);
     }
 }
 
