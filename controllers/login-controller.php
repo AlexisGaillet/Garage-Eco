@@ -42,9 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error['password'] = 'Vous devez renseignez votre mot de passe';
     } else {
         // On récupère les infos de l'utilisateur grâce à soin email qu'il vient de rentrer
-        $user = User::getByEmail($mail);
+        $user = User::get($mail);
         // On récupère le mot de passe qui est crypté
         if ($user) {
+            // var_dump($user);
+            // die;
             $hashedPassword = $user -> password;
             // On vérifie avec cette fonction si le mdp clair et le même que le mdp crypé qui vient de la base de donnée
             $passwordIsGood = password_verify($password, $hashedPassword);

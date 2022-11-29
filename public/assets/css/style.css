@@ -194,6 +194,12 @@ body {
 
 
 
+.border-box {
+    box-sizing: border-box;
+}
+
+
+
 
 
 

@@ -23,6 +23,38 @@ any('/ajouter-un-vehicule', '/controllers/addCar-controller.php');
 
 
 
+        // ADMIN DASHBOARD
+// Page d'accueil du dashboard
+any('/admin', '/controllers/admin/home-controller.php');
+
+
+    // USERS
+// Page d'accueil des utilisateurs
+any('/admin/utilisateurs', '/controllers/admin/Users/usersHome-controller.php');
+
+// Page liste des utilisateurs
+any('/admin/liste-utilisateur', '/controllers/admin/Users/usersList-controller.php');
+
+
+
+
+
+
+    // CARS
+// Page d'accueil des véhicules
+any('/admin/vehicules', '/controllers/admin/Cars/carsHome-controller.php');
+
+
+
+
+
+    // PROBLEMS
+// Page d'accueil des problèmes
+any('/admin/problemes', '/controllers/admin/Problems/problemsHome-controller.php');
+
+
+
+
 
 
 
