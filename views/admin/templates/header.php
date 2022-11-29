@@ -33,7 +33,7 @@
             <ul class="nav-menu">
                 <!-- Liens de la navbar -->
                 <li class="nav-item no-decoration">
-                    <a href="/" class="nav-link no-decoration goBack"><span>Retourner sur le site</span></a>
+                    <a href="/" class="nav-link no-decoration goBackOnTheSite"><span>Retourner sur le site</span></a>
                 </li>
                 <li class="nav-item no-decoration">
                     <a href="/admin" class="nav-link no-decoration">Accueil</a>

@@ -45,7 +45,7 @@ header {
 
 /* Liens de la navbar */
 .nav-link {
-    transition: 0.7s ease;
+    transition: color 0.7s ease;
     color: white;
 }
 
@@ -69,6 +69,17 @@ header {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: rgb(255, 255, 255);
+}
+
+.dashboardNavbarButton span  {
+    background: linear-gradient(180deg, #99ff6d 0%, #96f790 100%);
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+}
+.dashboardNavbarButton span:hover  {
+    color: rgb(0, 0, 0);
 }
 
 /* Media pour la responsivité du menu burger */

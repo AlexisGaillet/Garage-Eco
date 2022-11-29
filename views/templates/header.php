@@ -32,6 +32,11 @@
             <!-- Container des liens de la navbar -->
             <ul class="nav-menu">
                 <!-- Liens de la navbar -->
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']->admin == 1) { ?>
+                    <li class="nav-item no-decoration">
+                        <a href="/admin" class="nav-link no-decoration dashboardNavbarButton"><span>Dashboard</span></a>
+                    </li>
+                <?php } ?>
                 <li class="nav-item no-decoration">
                     <a href="/ajouter-un-vehicule" class="nav-link no-decoration">Ajouter un véhicule</a>
                 </li>

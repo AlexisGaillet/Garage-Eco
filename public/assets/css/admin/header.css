@@ -54,10 +54,11 @@ header {
     color: rgb(200, 200, 200);
 }
 
-.goBack span {
+.goBackOnTheSite span {
     background: linear-gradient(180deg, #4D4ACC 0%, #817EFF 100%);
-    font-weight: 600;
     padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
 }
 
 /* Container des barres du bouton */
