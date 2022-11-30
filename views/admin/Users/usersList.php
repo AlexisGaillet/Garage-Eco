@@ -2,7 +2,7 @@
     <h2 class="pageTitle">Liste des utilisateurs</h2>
 
     <div class="dashboardRow">
-        <a href="/admin/utilisateurs">Retour</a>
+        <a href="/admin/utilisateurs" class="dashboardGoBack">Retour</a>
     </div>
 
     <table>

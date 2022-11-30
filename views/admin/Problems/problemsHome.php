@@ -2,8 +2,9 @@
     <h2 class="pageTitle">Problèmes</h2>
 
     <div class="dashboardRow">
-        <a href="">Liste des solutions</a>
-        <a href="">Ajouter une solution</a>
-        <a href="">Ajouter des étapes</a>
+        <a href="" class="dashboardGoBack">Retour</a>
+        <a href="" class="dashboardRowLink">Liste des solutions</a>
+        <a href="" class="dashboardRowLink">Ajouter une solution</a>
+        <a href="" class="dashboardRowLink">Ajouter des étapes</a>
     </div>
 </main>

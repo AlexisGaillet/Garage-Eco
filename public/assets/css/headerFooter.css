@@ -72,14 +72,10 @@ header {
 }
 
 .dashboardNavbarButton span  {
-    background: linear-gradient(180deg, #99ff6d 0%, #96f790 100%);
+    background: linear-gradient(0deg, #c93737 0%, #ab3535 100%);
     padding: 10px;
     border-radius: 5px;
-    color: black;
     font-weight: 600;
-}
-.dashboardNavbarButton span:hover  {
-    color: rgb(0, 0, 0);
 }
 
 /* Media pour la responsivité du menu burger */

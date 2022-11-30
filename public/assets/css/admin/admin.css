@@ -1,0 +1,42 @@
+/* Ligne sous le titre (pour la scrollbar etc) */
+.dashboardRow {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px 4px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    font-size: 2rem;
+    gap: 16px;
+    overflow-x: scroll;
+}
+
+/* Propriété pour la scrollbar dans la ligne du dashboard */
+.dashboardRow::-webkit-scrollbar {
+    height: 6px;
+}
+.dashboardRow::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #4D4ACC 0%, #817EFF 100%);
+    border-radius: 10px;
+}
+
+/* Lien dans la ligne */
+.dashboardRowLink {
+    padding: 4px;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    background: #dcdcdc;
+    width: auto;
+    text-decoration: none;
+    color: #313131;
+}
+.dashboardGoBack {
+    padding: 4px;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #4D4ACC 0%, #817EFF 100%);
+    width: auto;
+    text-decoration: none;
+    color: #ffffff;
+}

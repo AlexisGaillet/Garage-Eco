@@ -4,7 +4,9 @@ header {
     width: 100%;
     height: 70px;
     margin-bottom: 20px;
-    background: linear-gradient(180deg, #424242 0%, #818181 100%);
+    /* background: linear-gradient(180deg, #424242 0%, #818181 100%); */
+    /* background: linear-gradient(0deg, #42e4ae 0%, #43bb69 100%); */
+    background: linear-gradient(0deg, #c93737 0%, #ab3535 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,39 +83,7 @@ header {
 
 
 
-/* Ligne sous le titre (pour la scrollbar etc) */
-.dashboardRow {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 10px 4px;
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    font-size: 2rem;
-    gap: 16px;
-    overflow-x: scroll;
-}
 
-/* Propriété pour la scrollbar dans la ligne du dashboard */
-.dashboardRow::-webkit-scrollbar {
-    height: 6px;
-}
-.dashboardRow::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #4D4ACC 0%, #817EFF 100%);
-    border-radius: 10px;
-}
-
-/* Lien dans la ligne */
-.dashboardRow a {
-    padding: 4px;
-    white-space: nowrap;
-    font-size: 1.5rem;
-    background: #dcdcdc;
-    width: auto;
-    text-decoration: none;
-    color: #313131;
-}
 
 
 
