@@ -138,11 +138,15 @@ class User {
      * 
      * @return object
      */
-    public static function get(string $mail = ''):array|object|bool{ // ou User|bool
+    public static function get(string $mail = '', int $id = 0):array|object|bool{ // ou User|bool
+        echo '<pre>' , var_dump($id) , '</pre>';
         $sql = 'SELECT * FROM `users`';
 
         if (!empty($mail)){
             $sql .= ' WHERE `mail` = :mail';
+        }
+        if ($id != 0){
+            $sql .= ' WHERE `id` = :id';
         }
 
         $sql .= ';';
@@ -152,9 +156,13 @@ class User {
         if (!empty($mail)){
             $sth->bindValue(':mail', $mail);
         }
-
+        if ($id != 0){
+            $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        }
         if($sth->execute()){
             if (!empty($mail)) {
+                $result = $sth->fetch();
+            } elseif ($id != 0) {
                 $result = $sth->fetch();
             } else {
                 $result = $sth->fetchAll();

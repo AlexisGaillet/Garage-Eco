@@ -40,3 +40,143 @@
     text-decoration: none;
     color: #ffffff;
 }
+
+
+
+.result {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.userCard {
+    width: 80%;
+    height: 140px;
+    margin: 10px;
+    padding: 6px;
+    font-size: 1.4rem;
+    color: #ffffff;
+    background: linear-gradient(180deg, #4D4ACC 0%, #817EFF 100%);
+    border-radius: 5px;
+    overflow-x: scroll;
+    justify-content: center;
+}
+
+.userCard::-webkit-scrollbar {
+    height: 6px;
+}
+.userCard::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #4D4ACC 0%, #817EFF 100%);
+    border-radius: 10px;
+}
+
+.userCardText {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+
+.userCard span {
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-style: italic;
+    color: #c7c7c7;
+}
+
+.userCardLink {
+    justify-content: space-evenly;
+}
+
+
+
+
+
+
+            /* FORMULAIRE */
+/* Taille et positionnement du main */
+.formDashBoardContainer {
+    min-height: calc(100vh - 70px - 117.5px - 40px);
+    justify-content: center;
+}
+
+/* Positionnement du formulaire */
+.formDashboard {
+    justify-content: center;
+    width: 90%;
+}
+
+/* Retrait des points de liste */
+.formDashboard ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Items de la liste */
+.formDashboard ul li {
+    display: flex;
+    justify-content: center;
+}
+
+/* Inputs et select des formulaires */
+.formDashboard ul li input, .formDashboard ul li select {
+    width: 100%;
+    max-width: 400px;
+    height: 3rem;
+    padding-left: 10px;
+    font-size: 1.4rem;
+    border: 3px solid #817EFF;
+    border-radius: 10px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Bouton Inscription/Connexion */
+.formDashboardButton {
+    width: 15rem;
+    height: 4rem;
+    margin-top: 15px;
+    background: linear-gradient(0deg, #4D4ACC 0%, #817EFF 100%);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 2rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+/* Message d'erreur */
+.errorText {
+    color: red;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+
+
+@media screen and (min-width: 576px) {
+    .userCard {
+        width: 400px;
+        height: 170px;
+    }
+}
+
+
+@media screen and (min-width: 996px) {
+    .userCard {
+        width: 450px;
+        height: 190px;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .userCard {
+        width: 540px;
+        height: 220px;
+    }
+}

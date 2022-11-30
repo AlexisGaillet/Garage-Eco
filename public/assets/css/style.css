@@ -59,19 +59,37 @@ body {
     list-style: none;
 }
 
+.text-center {
+    text-align: center;
+}
+
+
+
 
     /* Couleur de texte */
 /* Rouge */
 .textRed {
-    color: #d80000;
+    color: #ff2828;
+}
+/* Rouge Clair */
+.textLighred {
+    color: #ff5858;
 }
 /* Vert */
 .textGreen {
     color: #00d552;
 }
+/* Vert Clair */
+.textLightgreen {
+    color: #23ff77;
+}
 /* Gris */
 .textGrey {
     color: #808080;
+}
+/* Blanc */
+.textWhite {
+    color: #ffffff;
 }
 
 
@@ -93,6 +111,11 @@ body {
 /* Marge en bas de 20px */
 .margin-bottom-20px {
     margin-bottom: 20px;
+}
+
+/* Marge en bas de 20px */
+.margin-side-5px {
+    margin: 0 5px;
 }
 
 
