@@ -1,9 +1,5 @@
 <?php
 
-// Appel du fichier config
-require_once(__DIR__.'/../../../config/config.php');
-// Appel de la database
-require_once(__DIR__.'/../../../helpers/database.php');
 // Classe User
 require_once(__DIR__.'/../../../models/User.php');
 // Appel du tableau des roles

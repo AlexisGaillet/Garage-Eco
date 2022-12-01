@@ -2,7 +2,7 @@
     <h2 class="pageTitle">Connexion</h2>
 
     <!-- Message Flash -->
-    <?php if (SessionFlash::existGood()) { ?> <h4 class="textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
+    <?php if (SessionFlash::existGood()) { ?> <h4 class="message-flash textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="message-flash textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
     
     <form method="post" class="registerLoginForm flex-column">
         <ul>

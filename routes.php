@@ -38,6 +38,12 @@ any('/admin/liste-utilisateur', '/controllers/admin/Users/usersList-controller.p
 // Page modification d'un utilisateur
 any('/admin/modifier-utilisateur', '/controllers/admin/Users/usersModify-controller.php');
 
+// Page suppression d'un utilisateur
+any('/admin/supprimer-utilisateur', '/controllers/admin/Users/usersDelete-controller.php');
+
+// Page informations d'un utilisateur
+any('/admin/informations-utilisateur', '/controllers/admin/Users/usersInfo-controller.php');
+
 
 
 

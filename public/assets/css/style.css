@@ -50,6 +50,13 @@ body {
     text-align: center;
 }
 
+/* Message flash */
+.message-flash {
+    font-size: 1.3rem;
+    margin: 20px;
+    text-align: center;
+}
+
 
 
 

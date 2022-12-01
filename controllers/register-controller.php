@@ -118,7 +118,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Si il n'y a pas d'erreur
     if (empty($error)){
         // On crée un nouveau objet User
-        $user = new User($firstname, $lastname, $mail, $password);
+        $user = new User;
+        // On hydrate l'objet
+        $user->setFirstname($firstname);
+        $user->setLastname($lastname);
+        $user->setMail($mail);
+        $user->setPassword($password);
         // On enregistre les informations en base de donnée
         $user = $user->set();
         // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)

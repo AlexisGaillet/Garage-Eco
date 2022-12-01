@@ -15,13 +15,13 @@ class User {
     private int $_admin;
 
     // Constructeur
-    public function __construct(string $firstname, string $lastname, string $mail, string $password, int $admin = 0) {
-        $this->_firstname = $firstname;
-        $this->_lastname = $lastname;
-        $this->_mail = $mail;
-        $this->_password = $password;
-        $this->_admin = $admin;
-    }
+    // public function __construct(string $firstname, string $lastname, string $mail, string $password, int $admin = 0) {
+    //     $this->_firstname = $firstname;
+    //     $this->_lastname = $lastname;
+    //     $this->_mail = $mail;
+    //     $this->_password = $password;
+    //     $this->_admin = $admin;
+    // }
 
 
     // Getters
@@ -107,8 +107,8 @@ class User {
     public function set(int $id = null):User|bool{
         // Si l'id est null, on crée un nouvel utilisateur
         if(is_null($id)){
-            $sql = 'INSERT INTO `users` (`firstname`, `lastname`, `mail`, `password`, `admin`) 
-                    VALUES (:firstname, :lastname, :mail, :password, :admin);';
+            $sql = 'INSERT INTO `users` (`firstname`, `lastname`, `mail`, `password`) 
+                    VALUES (:firstname, :lastname, :mail, :password);';
         // Sinon on c'est qu'on veut modifier l'utilisateur
         } else {
             // $sql = 'UPDATE';
@@ -118,7 +118,6 @@ class User {
         $sth->bindValue(':lastname', $this->_lastname);
         $sth->bindValue(':mail', $this->_mail);
         $sth->bindValue(':password', $this->_password);
-        $sth->bindValue(':admin', $this->_admin, PDO::PARAM_INT);
         if($sth->execute()){
             // On récupère l'id de l'utilisateur créé et on le set dans l'objet User
             if(is_null($id)){
@@ -139,14 +138,14 @@ class User {
      * @return object
      */
     public static function get(string $mail = '', int $id = 0):array|object|bool{ // ou User|bool
-        echo '<pre>' , var_dump($id) , '</pre>';
+
         $sql = 'SELECT * FROM `users`';
 
         if (!empty($mail)){
             $sql .= ' WHERE `mail` = :mail';
         }
         if ($id != 0){
-            $sql .= ' WHERE `id` = :id';
+            $sql .= ' WHERE `id_users` = :id';
         }
 
         $sql .= ';';
@@ -169,6 +168,36 @@ class User {
             }
             if($result){
                 return $result;
+            }
+        }
+        return false;
+    }
+
+    public function modify($id):bool {
+        $sql = 'UPDATE `users` SET `firstname` = :firstname, `lastname` = :lastname, `mail` = :mail, `admin` = :admin WHERE `id_users` = :id;';
+        $sth = Database::getInstance()->prepare($sql);
+        $sth->bindValue(':firstname', $this->_firstname);
+        $sth->bindValue(':lastname', $this->_lastname);
+        $sth->bindValue(':mail', $this->_mail);
+        $sth->bindValue(':admin', $this->_admin, PDO::PARAM_INT);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static function delete($id):bool {
+        $sql = 'DELETE FROM `users` WHERE `id_users` = :id;';
+        $sth = Database::getInstance()->prepare($sql);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
             }
         }
         return false;
