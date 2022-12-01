@@ -42,14 +42,49 @@
 }
 
 
-
-.result {
+/* Container de Liste */
+.resultList {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
     justify-content: center;
     flex-wrap: wrap;
 }
+
+/* Container des infos */
+.resultInfo {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Titre des séctions dans le dashboard */
+.dashboardSectionTitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.usersInfo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 8px;
+}
+
+
+
+
+
+
+
+
+
 
 .userCard {
     width: 80%;

@@ -14,6 +14,20 @@ $stylesheet = 'admin';
 // Titre de la page
 $headTitle = 'Modification d\'un utilisateur';
 
+
+// Expulse l'utilisateur s'il n'est pas connecté ou s'il n'est pas admin
+if (isset($_SESSION['user'])) {
+    if ($_SESSION['user']->admin == 0) {
+        SessionFlash::setError('Vous n\'avez pas la permission d\'accéder à cette page');
+        header('Location: /');
+        exit;
+    }
+} else {
+    SessionFlash::setError('Vous devez être connecté et être administrateur pour accéder à cette page');
+    header('Location: /connexion');
+}
+
+
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 $users = User::get('', $id);

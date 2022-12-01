@@ -1,4 +1,6 @@
 <main>
+    <!-- Message Flash -->
+    <?php if (SessionFlash::existGood()) { ?> <h4 class="message-flash textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="message-flash textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
     <!-- Citation -->
     <h2 class="pageTitle">Réparer sa voiture c’est pas si compliqué.</h2>
     <!-- Ligne séparatrice -->

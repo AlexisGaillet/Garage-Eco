@@ -8,7 +8,7 @@
     <!-- Message Flash -->
     <?php if (SessionFlash::existGood()) { ?> <h4 class="message-flash textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="message-flash textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
 
-    <div class="result flex-row">    
+    <div class="resultList flex-row">    
     <?php foreach ($users as $user) { ?>
             <div class="userCard border-box flex-column">
                 <div class="flex-row-space-between">

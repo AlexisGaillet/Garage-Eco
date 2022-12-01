@@ -103,6 +103,10 @@ body {
 
     /* Marge */
 
+/* Marge en haut de 0px */
+.margin-top-0px {
+    margin-top: 0px;
+}
 /* Marge en haut de 10px */
 .margin-top-10px {
     margin-top: 10px;

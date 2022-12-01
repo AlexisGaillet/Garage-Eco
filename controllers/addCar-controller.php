@@ -26,7 +26,7 @@ $headTitle = 'Ajouter un véhicule';
 
 
 // id de la marque et du modèle en brut, à remplacer par les valeurs récupérées en AJAX
-$id_brands = 1;
+$id_brands = 2;
 $id_models = 1;
 
 
@@ -86,7 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
-
 
 
     // Appel des vues    

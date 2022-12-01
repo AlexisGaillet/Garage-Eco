@@ -1,6 +1,5 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Connexion</h2>
-
     <!-- Message Flash -->
     <?php if (SessionFlash::existGood()) { ?> <h4 class="message-flash textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="message-flash textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
     
