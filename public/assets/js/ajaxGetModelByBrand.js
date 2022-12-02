@@ -29,3 +29,17 @@ brand.addEventListener('change', event => {
             modelSelect.innerHTML += preparedHTML;
         })
 });
+
+
+
+const model = document.getElementById('model');
+
+model.addEventListener('change', event => {
+    const id = model.value;
+
+    const typeSelect = document.getElementById('type');
+
+    typeSelect.innerHTML = '<option disabled selected hidden value="">Motorisation</option>';
+
+    fetch('/add-car-ajax?Id_models=' + id)
+});

@@ -32,25 +32,12 @@
 
 
             <li><select name="model" id="model" required>
-
                 <option disabled selected hidden value="">Modèle</option>
-
-                    <?php foreach (Model::getAll($id_brands, $distinct = true) as $distinctModel) { ?>
-                        <optgroup label="<?=$distinctModel->name?>">
-                            <?php
-                                foreach (Model::getAll($id_brands, $distinct = false, $where = $distinctModel->name) as $model) { ?>
-                                    <option value="<?=$model->id?>"><?=$model->name?> <?=$model->car_year?></option>
-                                <?php }
-                            ?>
-                        </optgroup>
-                    <?php } ?>
-
             </select></li>
             <p class="errorText"><?=$error['model'] ?? ''?></p>
 
 
             <li><select name="type" id="type" required>
-
                 <option disabled selected hidden value="">Motorisation</option>
 
 

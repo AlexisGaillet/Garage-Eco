@@ -19,7 +19,6 @@ if (isset($_SESSION['user'])) {
     header('Location: /connexion');
 }
 
-echo '<pre>' , var_dump($test) , '</pre>';
 
 // Nom du fichier CSS de la page
 $stylesheet = 'admin';

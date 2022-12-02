@@ -19,4 +19,7 @@ foreach (Model::getAll($id_brands, true) as $distinctModel) {
 }
 
 
+
+
+
 echo json_encode($models, JSON_INVALID_UTF8_IGNORE);
