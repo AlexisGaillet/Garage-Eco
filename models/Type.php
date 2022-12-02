@@ -78,7 +78,7 @@ class Type {
             if ($distinct) {
                 $sql = 'SELECT DISTINCT `types`.`motorization` FROM `types` WHERE `types`.`id_models` = :id_models ORDER BY `types`.`motorization`;';
             } else {
-                $sql = 'SELECT * FROM `types` WHERE `types`.`id_models` = :id_models ORDER BY `models`.`name`;';
+                $sql = 'SELECT * FROM `types` WHERE `types`.`id_models` = :id_models ORDER BY `types`.`engine_type`;';
             }
 
             if ($where != false) {

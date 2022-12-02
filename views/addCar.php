@@ -12,7 +12,7 @@
                     <?php
                         foreach (Brand::getAll() as $brand) {
                             if ($brand->most_selled == 1) { ?>
-                                <option value="<?=$brand->id?>"><?=$brand->name?></option>
+                                <option value="<?=$brand->Id_brands?>"><?=$brand->name?></option>
                             <?php }
                         }
                     ?>
@@ -70,3 +70,5 @@
         <input type="submit" value="Ajouter" class="registerLoginButton">
     </form>
 </main>
+
+<script src="./../public/assets/js/ajaxGetModelByBrand.js"></script>

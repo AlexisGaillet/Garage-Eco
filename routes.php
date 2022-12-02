@@ -68,6 +68,9 @@ any('/admin/problemes', '/controllers/admin/Problems/problemsHome-controller.php
 
 
 
+// Ajax pour ajouter un véhicule
+any('/add-car-ajax', '/controllers/addCarAjax-controller.php');
+
 
 
 
