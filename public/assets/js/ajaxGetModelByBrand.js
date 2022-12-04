@@ -37,13 +37,11 @@ const model = document.getElementById('model');
 
 model.addEventListener('change', event => {
     const id = model.value;
-    console.log(id);
+    const name = model.options[model.selectedIndex].text;
+    console.log('id = ' + id);
+    console.log('name = ' + name);
 
-    // /\ DANS LA VIEW ON A BIEN L'ID EN INT MAIS QUAND LE JS LE RECUPERE IL RECUPERE LE NOM DE LA MOTORISATION /\ 
-
-
-
-
+    // /\ DANS LA VIEW ON A BIEN L'ID EN INT MAIS QUAND LE JS LE RECUPERE IL RECUPERE LE NOM DE DU MODELE /\ 
 
     const typeSelect = document.getElementById('type');
 
@@ -53,7 +51,7 @@ model.addEventListener('change', event => {
         .then(response => response.json())
 
         .then (types => {
-            console.log(types);
+            console.log('types : ' + types);
 
             let preparedHTML = '';
 

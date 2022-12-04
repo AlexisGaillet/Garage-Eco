@@ -1,13 +1,17 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Ajouter un véhicule</h2>
     
+    <?php
+
+    // var_dump(Type::getAll(1, $distinct = true));
+    // var_dump(Type::getAll(1, $distinct = false, $where = 1));
+
+    ?>
+
     <form method="post" class="registerLoginForm flex-column">
         <ul>
             <li><select name="brand" id="brand" required>
-
                 <option disabled selected hidden value="">Marque</option>
-
-
                 <optgroup label="Constructeurs les plus vendus">
                     <?php
                         foreach (Brand::getAll() as $brand) {
@@ -17,8 +21,6 @@
                         }
                     ?>
                 </optgroup>
-
-
                 <optgroup label="Constructeurs de A à Z">
                     <?php
                         foreach (Brand::getAll() as $brand) { ?>
@@ -26,32 +28,28 @@
                         <?php }
                     ?>
                 </optgroup>
-
             </select></li>
             <p class="errorText"><?=$error['brand'] ?? ''?></p>
-
-
+            
             <li><select name="model" id="model" required>
                 <option disabled selected hidden value="">Modèle</option>
             </select></li>
             <p class="errorText"><?=$error['model'] ?? ''?></p>
 
 
+
+
             <li><select name="type" id="type" required>
                 <option disabled selected hidden value="">Motorisation</option>
 
 
-                <?php foreach (Type::getAll($id_models, $distinct = true) as $distinctType) { ?>
-                    <optgroup label="<?=$type_array[$distinctType->motorization]?>">
-                        <?php
-                            foreach (Type::getAll($id_models, $distinct = false, $where = $distinctType->motorization) as $type) { ?>
-                                <option value="<?=$type->Id_types?>"><?=$type->engine_type?></option>
-                            <?php }
-                        ?>
-                    </optgroup>
-                <?php } ?>
 
             </select></li>
+
+
+
+
+
             <p class="errorText"><?=$error['type'] ?? ''?></p>
         </ul>
         <input type="submit" value="Ajouter" class="registerLoginButton">
