@@ -19,6 +19,20 @@ foreach (Model::getAll($id_brands, true) as $distinctModel) {
 }
 
 
+$id_models = filter_input(INPUT_GET, 'Id_models', FILTER_SANITIZE_NUMBER_INT);
+$types = array();
+
+// var_dump($id_models);
+
+foreach (Type::getAll($id_models, true) as $distinctType) {
+    $types[$distinctType->motorization] = [];
+
+            foreach (Type::getAll($id_models, false, $distinctType->engine_type) as $type) {
+                // array_push($types[$distinctType->engine_type], $type);
+            }
+}
+
+
 
 
 

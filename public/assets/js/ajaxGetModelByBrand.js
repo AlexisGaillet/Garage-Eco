@@ -3,6 +3,7 @@ const brand = document.getElementById('brand');
 brand.addEventListener('change', event => {
 
     const id = brand.value;
+    console.log(id);
 
     const modelSelect = document.getElementById('model');
 
@@ -36,10 +37,29 @@ const model = document.getElementById('model');
 
 model.addEventListener('change', event => {
     const id = model.value;
+    console.log(id);
+
+    // /\ DANS LA VIEW ON A BIEN L'ID EN INT MAIS QUAND LE JS LE RECUPERE IL RECUPERE LE NOM DE LA MOTORISATION /\ 
+
+
+
+
 
     const typeSelect = document.getElementById('type');
 
     typeSelect.innerHTML = '<option disabled selected hidden value="">Motorisation</option>';
 
     fetch('/add-car-ajax?Id_models=' + id)
+        .then(response => response.json())
+
+        .then (types => {
+            console.log(types);
+
+            let preparedHTML = '';
+
+            types.forEach( type => {
+                preparedHTML += '<option value"' + type.Id_types + '">' + type.name + ' ' + type.power + ' ' + type.fuel + '</option>';
+            });
+            typeSelect.innerHTML += preparedHTML;
+        })
 });

@@ -26,10 +26,12 @@ $headTitle = 'Ajouter un véhicule';
 
 
 // id de la marque et du modèle en brut, à remplacer par les valeurs récupérées en AJAX
-$id_brands = 1;
-$id_models = 1;
+// $id_brands = 1;
+// $id_models = 1;
 
-
+// foreach (Type::getAll(1, $distinct = false, $where = 1) as $type) {
+//     var_dump($type);
+// }
 
 
 // Si le formulaire est soumis
