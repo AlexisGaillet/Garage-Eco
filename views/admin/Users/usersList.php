@@ -12,15 +12,15 @@
     <?php foreach ($users as $user) { ?>
             <div class="userCard border-box flex-column">
                 <div class="flex-row-space-between">
-                    <p class="userCardText"><span>ID : </span><?=$user->Id_users?></p>
+                    <p class="cardText"><span>ID : </span><?=$user->Id_users?></p>
                     <a href="/admin/supprimer-utilisateur?id=<?=$user->Id_users?>" class="textWhite no-decoration margin-side-5px"><img src="./../../../public/assets/img/icon/delete.png" alt="Supprimer" class="crossDeleteImg"></a>
                 </div>
                 <div class="flex-row">
-                    <p class="userCardText"><span>Prénom/Nom : </span><?=$user->firstname.' '.$user->lastname?></p>
+                    <p class="cardText"><span>Prénom/Nom : </span><?=$user->firstname.' '.$user->lastname?></p>
                 </div>
-                <p class="userCardText"><span>Email : </span><?=$user->mail?></p>
-                <p class="userCardText <?= ($user->admin == 1) ? 'textLightgreen' : '' ; ?>"><span>Role : </span><?=$role[$user->admin]?></p>
-                <div class="userCardLink flex-row margin-top-10px">
+                <p class="cardText"><span>Email : </span><?=$user->mail?></p>
+                <p class="cardText <?= ($user->admin == 1) ? 'textLightgreen' : '' ; ?>"><span>Role : </span><?=$role[$user->admin]?></p>
+                <div class="cardLink flex-row margin-top-10px">
                     <a href="/admin/informations-utilisateur?id=<?=$user->Id_users?>" class="textWhite">Informations</a>
                     <a href="/admin/modifier-utilisateur?id=<?=$user->Id_users?>" class="textWhite">Modifier</a>
                 </div>

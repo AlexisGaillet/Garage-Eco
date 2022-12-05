@@ -62,4 +62,16 @@ class Brand {
         }
         return false;
     }
+
+    public static function delete(int $id):bool {
+        $sth = Database::getInstance()->prepare('DELETE FROM `brands` WHERE `brands`.`Id_brands` = :id');
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
+        }
+        return false;
+    }
 }

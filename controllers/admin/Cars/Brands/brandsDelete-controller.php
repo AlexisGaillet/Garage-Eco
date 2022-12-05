@@ -1,9 +1,9 @@
 <?php
 
 // Appel du fichier config
-require_once(__DIR__.'/../../../config/config.php');
+require_once(__DIR__.'/../../../../config/config.php');
 // Classe User
-require_once(__DIR__.'/../../../models/User.php');
+require_once(__DIR__.'/../../../../models/Brand.php');
 
 // Expulse l'utilisateur s'il n'est pas connecté ou s'il n'est pas admin
 if (isset($_SESSION['user'])) {
@@ -17,17 +17,16 @@ if (isset($_SESSION['user'])) {
     header('Location: /connexion');
 }
 
-// On récupère l'id du patient à supprimer
+// On récupère l'id de la marque à supprimer
 $id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
-
-$isDeleted = User::delete($id);
+$isDeleted = Brand::delete($id);
 if ($isDeleted) {
-    SessionFlash::setGood('Utilisateur supprimé avec succès');
+    SessionFlash::setGood('Marque supprimée avec succès');
 } else {
-    SessionFlash::setError('Une erreur est survenue lors de la suppression de l\'utilisateur');
+    SessionFlash::setError('Une erreur est survenue lors de la suppression de la marque');
 }
 
-// Retourne à la page de la liste des patients
-header('Location: /admin/liste-utilisateur');
+// Retourne à la page de la liste des marques
+header('Location: /admin/marques');
 exit();

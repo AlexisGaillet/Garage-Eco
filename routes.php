@@ -53,6 +53,26 @@ any('/admin/informations-utilisateur', '/controllers/admin/Users/usersInfo-contr
 // Page d'accueil des véhicules
 any('/admin/vehicules', '/controllers/admin/Cars/carsHome-controller.php');
 
+    // BRANDS
+// Page d'accueil des marques
+any('/admin/marques', '/controllers/admin/Cars/Brands/brandsHome-controller.php');
+
+// Page suppression d'une marque
+any('/admin/supprimer-marque', '/controllers/admin/Cars/Brands/brandsDelete-controller.php');
+
+
+
+    // MODELS
+// Page d'accueil des modèles
+any('/admin/modeles', '/controllers/admin/Cars/Models/modelsHome-controller.php');
+
+
+
+    // TYPES
+// Page d'accueil des types
+any('/admin/types', '/controllers/admin/Cars/Types/typesHome-controller.php');
+
+
 
 
 

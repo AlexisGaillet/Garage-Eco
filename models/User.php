@@ -191,8 +191,7 @@ class User {
     }
 
     public static function delete($id):bool {
-        $sql = 'DELETE FROM `users` WHERE `id_users` = :id;';
-        $sth = Database::getInstance()->prepare($sql);
+        $sth = Database::getInstance()->prepare('DELETE FROM `users` WHERE `id_users` = :id;');
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
 
         if($sth->execute()){
