@@ -1,12 +1,6 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Ajouter un véhicule</h2>
     
-    <?php
-
-    // var_dump(Type::getAll(1, $distinct = true));
-    // var_dump(Type::getAll(1, $distinct = false, $where = 1));
-
-    ?>
 
     <form method="post" class="registerLoginForm flex-column">
         <ul>
@@ -42,14 +36,7 @@
             <li><select name="type" id="type" required>
                 <option disabled selected hidden value="">Motorisation</option>
 
-
-
             </select></li>
-
-
-
-
-
             <p class="errorText"><?=$error['type'] ?? ''?></p>
         </ul>
         <input type="submit" value="Ajouter" class="registerLoginButton">

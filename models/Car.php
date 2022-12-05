@@ -14,12 +14,12 @@ class Car {
     private int $_id_types;
 
     // Constructeur
-    public function __construct(int $id_users, int $id_brands, int $id_models, int $id_types) {
-        $this->_id_users = $id_users;
-        $this->_id_brands = $id_brands;
-        $this->_id_models = $id_models;
-        $this->_id_types = $id_types;
-    }
+    // public function __construct(int $id_users, int $id_brands, int $id_models, int $id_types) {
+    //     $this->_id_users = $id_users;
+    //     $this->_id_brands = $id_brands;
+    //     $this->_id_models = $id_models;
+    //     $this->_id_types = $id_types;
+    // }
 
     // Getters
     public function getId():int {
@@ -62,5 +62,28 @@ class Car {
 
     public function setIdTypes(int $id_types):void {
         $this->_id_types = $id_types;
+    }
+
+
+
+
+
+    // Méthodes
+
+    public static function set(int $id_user, int $id_brand, int $id_model, int $id_type):bool {
+        $sth = Database::getInstance()->prepare('INSERT INTO cars (Id_users, Id_brands, Id_models, Id_types) VALUES (:id_users, :id_brands, :id_models, :id_types);');
+
+        $sth->bindValue(':id_users', $id_user, PDO::PARAM_INT);
+        $sth->bindValue(':id_brands', $id_brand, PDO::PARAM_INT);
+        $sth->bindValue(':id_models', $id_model, PDO::PARAM_INT);
+        $sth->bindValue(':id_types', $id_type, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        if ($sth -> rowCount() >= 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -16,6 +16,8 @@ require_once(__DIR__.'/../helpers/database.php');
 require_once(__DIR__.'/../models/Brand.php');
 require_once(__DIR__.'/../models/Model.php');
 require_once(__DIR__.'/../models/Type.php');
+// Classe Car
+require_once(__DIR__.'/../models/Car.php');
 
 // Nom du fichier CSS de la page
 $stylesheet = 'loginRegister';
@@ -25,35 +27,30 @@ $headTitle = 'Ajouter un véhicule';
 
 
 
-// id de la marque et du modèle en brut, à remplacer par les valeurs récupérées en AJAX
-// $id_brands = 1;
-// $id_models = 1;
-
-// foreach (Type::getAll(1, $distinct = false, $where = 1) as $type) {
-//     var_dump($type);
-// }
-
 
 // Si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    // On récupère l'id de l'utilisateur
+    $id_user = $_SESSION['user']->Id_users;
+
         // Nettoyage
     // Nettoyage de la marque ($brand)
-    $brand = trim(filter_input(INPUT_POST, 'brand', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
+    $id_brand = trim(filter_input(INPUT_POST, 'brand', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
     // Nettoyage du modèle ($model)
-    $model = trim(filter_input(INPUT_POST, 'model', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
+    $id_model = trim(filter_input(INPUT_POST, 'model', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
     // Nettoyage de la motorisation ($type)
-    $type = trim(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
+    $id_type = trim(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
 
 
 
 
         // Validation
     // Validation de la marque ($brand)
-    $isOk = filter_var($brand, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
+    $isOk = filter_var($id_brand, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
 
     // Champ vide
-    if (empty($brand)) {
+    if (empty($id_brand)) {
         $error['brand'] = 'Vous devez renseigner une marque';
     } else {
         // Marque invalide
@@ -63,10 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Validation du modèle ($model)
-    $isOk = filter_var($model, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
+    $isOk = filter_var($id_model, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
 
     // Champ vide
-    if (empty($model)) {
+    if (empty($id_model)) {
         $error['model'] = 'Vous devez renseigner un modèle';
     } else {
         // Modèle invalide
@@ -76,15 +73,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Validation de la motorisation ($type)
-    $isOk = filter_var($type, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
+    $isOk = filter_var($id_type, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
 
     // Champ vide
-    if (empty($type)) {
+    if (empty($id_type)) {
         $error['type'] = 'Vous devez renseigner une motorisation';
     } else {
         // Motorisation invalide
         if (!$isOk) {
             $error['type'] = 'La motorisation n\'est pas valide';
+        }
+    }
+
+
+
+    // Si il n'y a pas d'erreur
+    if (empty($error)){
+        // On crée un nouveau objet User
+        $car = new Car;
+        // On enregistre les informations en base de donnée
+        $car = $car->set($id_user, $id_brand, $id_model, $id_type);
+        // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
+        if($car == true){
+            // SessionFlash::setGood('Vous avez bien ajouter un véhicule');
+            // header('Location: /');
+            // exit;
         }
     }
 }
