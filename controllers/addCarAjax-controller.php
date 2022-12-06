@@ -15,10 +15,10 @@ if (isset($id_brands)) {
     
     $models = array();
     
-    foreach (Model::getAll($id_brands, true) as $distinctModel) {
+    foreach (Model::get($id_brands, true) as $distinctModel) {
         $models[$distinctModel->name] = [];
     
-        foreach (Model::getAll($id_brands, false, $distinctModel->name) as $model) {
+        foreach (Model::get($id_brands, false, $distinctModel->name) as $model) {
             array_push($models[$distinctModel->name], $model);
         }
     }
@@ -34,10 +34,10 @@ if (isset($id_models)) {
 
 $types = array();
 
-foreach (Type::getAll($id_models, true) as $distinctMotorization) {
+foreach (Type::get($id_models, true) as $distinctMotorization) {
     $types[$distinctMotorization->motorization] = [];
 
-    foreach (Type::getAll($id_models, false, $distinctMotorization->motorization) as $type) {
+    foreach (Type::get($id_models, false, $distinctMotorization->motorization) as $type) {
         array_push($types[$distinctMotorization->motorization], $type);
     }
 }

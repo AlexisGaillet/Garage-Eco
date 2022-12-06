@@ -12,10 +12,10 @@ class Type {
     private int $_motorization;
 
     // Constructeur
-    public function __construct(int $engine_type, int $motorization) {
-        $this->_engine_type = $engine_type;
-        $this->_motorization = $motorization;
-    }
+    // public function __construct(int $engine_type, int $motorization) {
+    //     $this->_engine_type = $engine_type;
+    //     $this->_motorization = $motorization;
+    // }
 
     // Getters
     public function getId():int {
@@ -56,7 +56,7 @@ class Type {
      * 
      * @return array
      */
-    public static function getAll(int $id_models = null, bool $distinct = false, $where = false):array|bool {
+    public static function get(int $id_models = null, bool $distinct = false, $where = false):array|bool {
         // On veut afficher tous les types d'un model
         if (!is_null($id_models)) {
             // Si il existe 2 fois le même type pour un model, on ne veut l'afficher qu'une seule fois

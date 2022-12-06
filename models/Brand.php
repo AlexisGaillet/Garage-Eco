@@ -12,10 +12,10 @@ class Brand {
     private int $_most_selled;
 
     // Constructeur
-    public function __construct(string $name, int $most_selled) {
-        $this->_name = $name;
-        $this->_most_selled = $most_selled;
-    }
+    // public function __construct(string $name, int $most_selled) {
+    //     $this->_name = $name;
+    //     $this->_most_selled = $most_selled;
+    // }
 
     // Getters
     public function getId():int {
@@ -51,21 +51,82 @@ class Brand {
     // Méthodes
 
     /**
-     * Récupère toutes les marques
-     * @return object
+     * Ajoute une marque dans la base de donnée
+     * @param string $name
+     * @param int $most_selled
+     * 
+     * @return bool
      */
-    public static function getAll():array|bool {
-        $sth = Database::getInstance()->query('SELECT * FROM `brands` ORDER BY `brands`.`name`;');
+    public static function add(string $name, int $most_selled):bool {
+        $sth = Database::getInstance()->prepare('INSERT INTO `brands` (`name`, `most_selled`) VALUES (:name, :most_selled);');
+        $sth->bindValue(':name', $name, PDO::PARAM_STR);
+        $sth->bindValue(':most_selled', $most_selled, PDO::PARAM_INT);
 
-        if ($sth -> rowCount() >= 1) {
-            return  $sth->fetchAll();
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
         }
         return false;
     }
 
+
+    /**
+     * Récupère toutes les marques de la base de donnée
+     * @return object
+     */
+    public static function get(int $id=0):array|object|bool {
+        if($id!=0){
+            $sth = Database::getInstance()->prepare('SELECT * FROM `brands` WHERE `brands`.`Id_brands` = :id;');
+            $sth->bindValue(':id', $id, PDO::PARAM_INT);
+            $sth->execute();
+        } else {
+            $sth = Database::getInstance()->query('SELECT * FROM `brands` ORDER BY `brands`.`name`;');
+        }
+
+        if ($sth -> rowCount() >= 1) {
+            if($id!=0){
+                return  $sth->fetch();
+            } else {
+                return  $sth->fetchAll();
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * Supprime une marque de la base de donnée
+     * @param int $id
+     * 
+     * @return bool
+     */
     public static function delete(int $id):bool {
         $sth = Database::getInstance()->prepare('DELETE FROM `brands` WHERE `brands`.`Id_brands` = :id');
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
+
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * Modifie une marque de la base de donnée
+     * @param int $id
+     * @param string $name
+     * @param int $most_selled
+     * 
+     * @return bool
+     */
+    public static function modify(int $id, string $name, int $most_selled):bool {
+        $sth = Database::getInstance()->prepare('UPDATE `brands` SET `name` = :name, `most_selled` = :most_selled WHERE `brands`.`Id_brands` = :id;');
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->bindValue(':name', $name, PDO::PARAM_STR);
+        $sth->bindValue(':most_selled', $most_selled, PDO::PARAM_INT);
 
         if($sth->execute()){
             if($sth->rowCount()==1){

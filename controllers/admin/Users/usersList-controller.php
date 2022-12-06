@@ -17,6 +17,7 @@ if (isset($_SESSION['user'])) {
 } else {
     SessionFlash::setError('Vous devez être connecté et être administrateur pour accéder à cette page');
     header('Location: /connexion');
+    exit();
 }
 
 

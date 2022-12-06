@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="./../public/assets/css/404.css">
+    <link rel="stylesheet" href="/public/assets/css/404.css">
     <!-- Style -->
-    <link rel="stylesheet" href="./../public/assets/css/style.css">
+    <link rel="stylesheet" href="/public/assets/css/style.css">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./../public/assets/img/icon/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/public/assets/img/icon/favicon.png" type="image/x-icon">
     <!-- Titre su site -->
     <title>Page Introuvable | Garage'Eco</title>
 </head>

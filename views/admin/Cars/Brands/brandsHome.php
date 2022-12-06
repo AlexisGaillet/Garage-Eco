@@ -2,14 +2,17 @@
     <h2 class="pageTitle">Marques</h2>
 
     <div class="dashboardRow">
-        <a href="/admin/vehicules" class="dashboardGoBack">Retour</a>
+        <a href="/admin" class="dashboardGoBack">Retour</a>
+        <a href="/admin/ajouter-marque" class="dashboardRowLink">Ajouter une marque</a>
+        <a href="/admin/ajouter-modele" class="dashboardRowLink">Ajouter un modèle</a>
+        <a href="/admin/ajouter-type" class="dashboardRowLink">Ajouter une motorisation</a>
     </div>
 
     <!-- Message Flash -->
     <?php if (SessionFlash::existGood()) { ?> <h4 class="message-flash textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="message-flash textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
     
     <div class="resultList flex-row">
-        <?php foreach (Brand::getAll() as $brand) { ?>
+        <?php foreach (Brand::get() as $brand) { ?>
             <div class="brandCard border-box flex-column">
                 <div class="flex-row-space-between">
                     <p class="cardText"><span>ID : </span><?=$brand->Id_brands?></p>
@@ -19,7 +22,7 @@
                     <p class="cardText align-self-center"><?=$brand->name?></p>
                 </div>
                 <div class="cardLink flex-row margin-top-10px">
-                    <a href="/admin/supprimer-marque?id=<?=$brand->Id_brands?>" class="textWhite">Informations</a>
+                    <a href="/admin/modeles?id=<?=$brand->Id_brands?>" class="textWhite">Modèles</a>
                     <a href="/admin/modifier-marque?id=<?=$brand->Id_brands?>" class="textWhite">Modifier</a>
                 </div>
             </div>

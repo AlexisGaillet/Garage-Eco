@@ -8,7 +8,7 @@
                 <option disabled selected hidden value="">Marque</option>
                 <optgroup label="Constructeurs les plus vendus">
                     <?php
-                        foreach (Brand::getAll() as $brand) {
+                        foreach (Brand::get() as $brand) {
                             if ($brand->most_selled == 1) { ?>
                                 <option value="<?=$brand->Id_brands?>"><?=$brand->name?></option>
                             <?php }
@@ -17,7 +17,7 @@
                 </optgroup>
                 <optgroup label="Constructeurs de A à Z">
                     <?php
-                        foreach (Brand::getAll() as $brand) { ?>
+                        foreach (Brand::get() as $brand) { ?>
                             <option value="<?=$brand->Id_brands?>"><?=$brand->name?></option>
                         <?php }
                     ?>

@@ -12,10 +12,10 @@ class Model {
     private string $_name;
 
     // Constructeur
-    public function __construct(int $id_brands, string $name) {
-        $this->_id_brands = $id_brands;
-        $this->_name = $name;
-    }
+    // public function __construct(int $id_brands, string $name) {
+    //     $this->_id_brands = $id_brands;
+    //     $this->_name = $name;
+    // }
 
     // Getters
     public function getId():int {
@@ -56,7 +56,7 @@ class Model {
      * 
      * @return array
      */
-    public static function getAll(int $id_brands = null, bool $distinct = false, $where = false):array|bool {
+    public static function get(int $id_brands = null, bool $distinct = false, $where = false):array|object|bool {
         // On veut afficher tous les modèles d'une marque
         if (!is_null($id_brands)) {
             // Si il existe 2 fois le même modèle pour une marque, on ne veut l'afficher qu'une seule fois
@@ -71,11 +71,10 @@ class Model {
             }
 
             $sth = Database::getInstance()->prepare($sql);
-
             if ($where != false) {
                 $sth->bindValue(':name', $where);
             }
-
+            
             $sth->bindValue(':id_brands', $id_brands, PDO::PARAM_INT);
             $sth->execute();
 

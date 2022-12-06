@@ -95,9 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $car = $car->set($id_user, $id_brand, $id_model, $id_type);
         // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
         if($car == true){
-            // SessionFlash::setGood('Vous avez bien ajouter un véhicule');
-            // header('Location: /');
-            // exit;
+            SessionFlash::setGood('Vous avez bien ajouter un véhicule');
+            header('Location: /');
+            exit;
         }
     }
 }
@@ -114,4 +114,5 @@ include(__DIR__.'/../views/templates/footer.php');
 } else {
     SessionFlash::setError('Vous devez être connecté pour accéder à cette page');
     header('Location: /connexion');
+    
 }
