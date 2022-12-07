@@ -6,7 +6,7 @@ require_once(__DIR__.'/../../../../models/Brand.php');
 // Nom du fichier CSS de la page
 $stylesheet = 'admin';
 // Titre de la page
-$headTitle = 'Modification d\'un utilisateur';
+$headTitle = 'Modification d\'une marque';
 
 // Expulse l'utilisateur s'il n'est pas connecté ou s'il n'est pas admin
 if (isset($_SESSION['user'])) {

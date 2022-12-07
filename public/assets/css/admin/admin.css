@@ -181,7 +181,7 @@
 }
 
 /* Inputs et select des formulaires */
-.formDashboard ul li input, .formDashboard ul li select {
+.formDashboard ul li input:not(#noEndYear), .formDashboard ul li select {
     width: 100%;
     max-width: 400px;
     height: 3rem;
@@ -213,6 +213,13 @@
     font-size: 1.2rem;
     margin-bottom: 20px;
     width: 100%;
+}
+
+#noEndYear {
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
 }
 
 

@@ -22,13 +22,15 @@ if (isset($_SESSION['user'])) {
 }
 
 // On récupère l'id de la marque
+$id_brand = intval(filter_input(INPUT_GET, 'id_brand', FILTER_SANITIZE_NUMBER_INT));
+// On récupère l'id du modèle
 $id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
 $types = Type::get($id);
 
 if ($types == false) {
     SessionFlash::setError('Aucune motorisation trouvé');
-    header('Location: /admin/modeles?id='.$id);
+    header('Location: /admin/modeles?id='.$id_brand);
     exit;
 }
 

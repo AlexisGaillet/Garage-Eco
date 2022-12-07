@@ -5,6 +5,9 @@
         <a href="/admin/vehicules" class="dashboardGoBack">Retour</a>
     </div>
     
+    <!-- Message Flash -->
+    <?php if (SessionFlash::existGood()) { ?> <h4 class="message-flash textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="message-flash textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
+
     <div class="resultList flex-row">
         <?php foreach ($models as $model) { ?>
             <div class="brandCard border-box flex-column">
@@ -16,7 +19,7 @@
                     <p class="cardText align-self-center"><?=$model->name . ' ' . $model->car_year?></p>
                 </div>
                 <div class="cardLink flex-row margin-top-10px">
-                    <a href="/admin/motorisations?id=<?=$model->Id_models?>" class="textWhite">Motorisations</a>
+                    <a href="/admin/motorisations?id_brand=<?=$id?>&id=<?=$model->Id_models?>" class="textWhite">Motorisations</a>
                     <a href="/admin/modifier-modele?id=<?=$model->Id_models?>" class="textWhite">Modifier</a>
                 </div>
             </div>

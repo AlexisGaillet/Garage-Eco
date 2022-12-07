@@ -65,11 +65,23 @@ any('/admin/modifier-marque', '/controllers/admin/Cars/Brands/brandsModify-contr
 // Page d'accueil des modèles
 any('/admin/modeles', '/controllers/admin/Cars/Models/modelsHome-controller.php');
 
+// Page suppression d'un modèle
+any('/admin/supprimer-modele', '/controllers/admin/Cars/Models/modelsDelete-controller.php');
+
+// Page modification d'un modèle
+any('/admin/modifier-modele', '/controllers/admin/Cars/Models/modelsModify-controller.php');
+
 
 
     // TYPES
 // Page d'accueil des types
 any('/admin/motorisations', '/controllers/admin/Cars/Types/typesHome-controller.php');
+
+// Page suppression d'un type
+any('/admin/supprimer-motorisation', '/controllers/admin/Cars/Types/typesDelete-controller.php');
+
+// Page modification d'un type
+any('/admin/modifier-motorisation', '/controllers/admin/Cars/Types/typesModify-controller.php');
 
 
 

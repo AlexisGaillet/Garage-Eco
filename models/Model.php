@@ -91,4 +91,44 @@ class Model {
             return false;
         }
     }
+
+    /**
+     * Récupère un modèle en fonction de son id
+     * @param int $id_model
+     * 
+     * @return object
+     */
+    public static function getOne(int $id_model):object|bool {
+        $sth = Database::getInstance()->prepare('SELECT * FROM `models` WHERE `models`.`Id_models` = :id_model;');
+        $sth->bindValue(':id_model', $id_model, PDO::PARAM_INT);
+        $sth->execute();
+
+        if ($sth -> rowCount() >= 1) {
+            return $sth->fetch();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Modifie un modèle en fonction de son id
+     * @param int $id
+     * @param string $name
+     * @param string $car_year
+     * 
+     * @return [type]
+     */
+    public static function modify(int $id, string $name, string $car_year) {
+        $sth = Database::getInstance()->prepare('UPDATE `models` SET `name` = :name, `car_year` = :car_year WHERE `models`.`Id_models` = :id_model;');
+        $sth->bindValue(':id_model', $id, PDO::PARAM_INT);
+        $sth->bindValue(':name', $name);
+        $sth->bindValue(':car_year', $car_year);
+        
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
+        }
+        return false;
+    }
 }
