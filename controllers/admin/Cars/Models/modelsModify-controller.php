@@ -21,8 +21,12 @@ if (isset($_SESSION['user'])) {
     exit();
 }
 
+// On récupère l'id de la marque
+$id_brand = intval(filter_input(INPUT_GET, 'id_brand', FILTER_SANITIZE_NUMBER_INT));
+// On récupère l'id du modèle
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
+// On récupère le modèle
 $model = Model::getOne($id);
 
 
@@ -89,7 +93,7 @@ if (!empty($endYear)) {
 }
 
 // Validation de la checkbox ($noEndYear)
-if ($noEndYear == 1) {
+if (!is_null($noEndYear)) {
     $endYear = '...';
 }
 
@@ -103,13 +107,12 @@ if (!isset($error)) {
     $modelUpdated = $modelUpdated->modify($id, $name, $car_year);
     // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
     if($modelUpdated == true){
-        // SessionFlash::setGood('Vous avez bien modifier le modèle ' . $name);
-        // header('Location: /admin/modeles?id=' . $id);
-        // exit;
+        SessionFlash::setGood('Vous avez bien modifier le modèle ' . $name . ' ' . $car_year);
+        header('Location: /admin/modeles?id=' . $id);
+        exit;
     }
 }
 }
-
 
 
 

@@ -26,6 +26,7 @@ $id_brand = intval(filter_input(INPUT_GET, 'id_brand', FILTER_SANITIZE_NUMBER_IN
 // On récupère l'id du modèle
 $id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
+// On récupère les motorisations
 $types = Type::get($id);
 
 if ($types == false) {

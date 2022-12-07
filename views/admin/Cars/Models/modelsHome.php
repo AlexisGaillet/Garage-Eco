@@ -20,7 +20,7 @@
                 </div>
                 <div class="cardLink flex-row margin-top-10px">
                     <a href="/admin/motorisations?id_brand=<?=$id?>&id=<?=$model->Id_models?>" class="textWhite">Motorisations</a>
-                    <a href="/admin/modifier-modele?id=<?=$model->Id_models?>" class="textWhite">Modifier</a>
+                    <a href="/admin/modifier-modele?id_brand=<?=$id?>&id=<?=$model->Id_models?>" class="textWhite">Modifier</a>
                 </div>
             </div>
         <?php } ?>

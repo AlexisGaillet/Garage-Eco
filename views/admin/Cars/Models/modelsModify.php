@@ -2,7 +2,7 @@
     <h2 class="pageTitle">Modifier un Modèle</h2>
 
     <div class="dashboardRow">
-        <a href="/admin/modeles?id=1" class="dashboardGoBack">Retour</a>
+        <a href="/admin/modeles?id=<?=$id_brand?>" class="dashboardGoBack">Retour</a>
     </div>
 
     <div class="formDashBoardContainer flex-column-center">
@@ -23,6 +23,7 @@
                 <p class="errorText"><?=$error['startYear'] ?? ''?></p>
 
                 <li><select name="endYear" id="endYear">
+                <?= ($placeholderEnd_year == '...') ? '<option disabled selected hidden>Année de fin de production</option>' : '' ?>
                     <?php
                         $year = date('Y')+2;
                         while ($year >= 1900) { ?>
