@@ -131,4 +131,22 @@ class Model {
         }
         return false;
     }
+
+    /**
+     * Supprime un modèle en fonction de son id
+     * @param int $id
+     * 
+     * @return bool
+     */
+    public static function delete(int $id):bool {
+        $sth = Database::getInstance()->prepare('DELETE FROM `models` WHERE `models`.`Id_models` = :id_model;');
+        $sth->bindValue(':id_model', $id, PDO::PARAM_INT);
+
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
+        }
+        return false;
+    }
 }

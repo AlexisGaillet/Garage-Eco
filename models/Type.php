@@ -92,4 +92,44 @@ class Type {
             return false;
         }
     }
+
+    /**
+     * Récupère un type de moteur en fonction de son id
+     * @param int $id
+     * 
+     * @return object|bool
+     */
+    public static function getOne(int $id):object|bool {
+        $sth = Database::getInstance()->prepare('SELECT * FROM `types` WHERE `types`.`Id_types` = :id;');
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->execute();
+
+        if ($sth -> rowCount() >= 1) {
+            return $sth->fetch();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Modifie la motorisation d'un modèle
+     * @param int $id
+     * @param string $engine_type
+     * @param int $motorization
+     * 
+     * @return bool
+     */
+    public static function modify(int $id, string $engine_type, int $motorization):bool {
+        $sth = Database::getInstance()->prepare('UPDATE `types` SET `engine_type` = :engine_type, `motorization` = :motorization WHERE `types`.`Id_types` = :id;');
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->bindValue(':engine_type', $engine_type);
+        $sth->bindValue(':motorization', $motorization, PDO::PARAM_INT);
+
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
+        }
+        return false;;
+    }
 }

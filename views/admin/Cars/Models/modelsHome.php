@@ -13,7 +13,7 @@
             <div class="brandCard border-box flex-column">
                 <div class="flex-row-space-between">
                     <p class="cardText"><span>ID : </span><?=$model->Id_models?></p>
-                    <a href="/admin/supprimer-modele?id=<?=$model->Id_models?>" class="textWhite no-decoration margin-side-5px"><img src="./../../../public/assets/img/icon/delete.png" alt="Supprimer" class="crossDeleteImg"></a>
+                    <a href="/admin/supprimer-modele?id_brand=<?=$id?>&id=<?=$model->Id_models?>" class="textWhite no-decoration margin-side-5px"><img src="./../../../public/assets/img/icon/delete.png" alt="Supprimer" class="crossDeleteImg"></a>
                 </div>
                 <div class="flex-row justify-center">
                     <p class="cardText align-self-center"><?=$model->name . ' ' . $model->car_year?></p>

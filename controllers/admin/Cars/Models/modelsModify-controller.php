@@ -79,7 +79,6 @@ if (empty($startYear)) {
 }
 
 // Validation de l'année de fin ($endYear)
-// $isOk = filter_var($endYear, FILTER_VALIDATE_INT, array("options" => array("min_range" => 1900, "max_range" => (date('Y'))+3)));
 
 // Champ Remplie mais invalide
 if (!empty($endYear)) {
@@ -100,12 +99,10 @@ if (!is_null($noEndYear)) {
 $car_year = '(' . $startYear . '-' . $endYear . ')';
 
 // Si aucune erreur
-if (!isset($error)) {
-    // On crée un objet Model
-    $modelUpdated = new Model();
+if (empty($error)) {
     // On enregistre les modofications dans la base de données
-    $modelUpdated = $modelUpdated->modify($id, $name, $car_year);
-    // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
+    $modelUpdated = Model::modify($id, $name, $car_year);
+    // Si l'utilisateur est bien enregistré on redirige vers la page des modèles avec un message de succé (SessionFlash)
     if($modelUpdated == true){
         SessionFlash::setGood('Vous avez bien modifier le modèle ' . $name . ' ' . $car_year);
         header('Location: /admin/modeles?id=' . $id);

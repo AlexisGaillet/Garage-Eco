@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Nettoyage du nom de la marque ($brandName)
 $brandName = trim(filter_input(INPUT_POST, 'brandName', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
 // Nettoyage de l'option le plus vendue ($mostSelled)
-$mostSelled = intval(filter_input(INPUT_POST, 'mostSelled', FILTER_SANITIZE_NUMBER_INT));
+$mostSelled = filter_input(INPUT_POST, 'mostSelled', FILTER_SANITIZE_NUMBER_INT);
 
 
 
@@ -52,8 +52,10 @@ if (empty($brandName)) {
 }
 
 // Validation de l'option le plus vendue ($mostSelled)
-if ($mostSelled != 0 && $mostSelled != 1) {
-    $error['mostSelled'] = 'La valeur n\'est pas valide';
+if (!is_null($mostSelled)) {
+    $mostSelled = 1;
+} else {
+    $mostSelled = 0;
 }
 
 
@@ -71,8 +73,6 @@ if (empty($error)){
     }
 }
 }
-
-
 
 
     // Appel des vues    

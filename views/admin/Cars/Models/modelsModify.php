@@ -35,7 +35,7 @@
                 <p class="errorText"><?=$error['endYear'] ?? ''?></p>
 
                 <li>
-                    <input type="checkbox" name="noEndYear" id="noEndYear">
+                    <input type="checkbox" name="noEndYear" id="noEndYear" <?=($placeholderEnd_year == '...') ? 'checked' : ''?>>
                     <label for="noEndYear">Le Modèle n'a pas de date de fin</label>
                 </li>
                 <p class="errorText"><?=$error['noEndYear'] ?? ''?></p>
