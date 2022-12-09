@@ -1,5 +1,7 @@
 <?php
 
+// Config
+require_once(__DIR__.'/../../../../config/config.php');
 // Classe Model
 require_once(__DIR__.'/../../../../models/Model.php');
 
@@ -104,7 +106,7 @@ if (empty($error)) {
     $modelUpdated = Model::modify($id, $name, $car_year);
     // Si l'utilisateur est bien enregistré on redirige vers la page des modèles avec un message de succé (SessionFlash)
     if($modelUpdated == true){
-        SessionFlash::setGood('Vous avez bien modifier le modèle ' . $name . ' ' . $car_year);
+        SessionFlash::setGood('Vous avez bien modifié le modèle ' . $name . ' ' . $car_year);
         header('Location: /admin/modeles?id=' . $id);
         exit;
     }

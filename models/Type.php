@@ -132,4 +132,22 @@ class Type {
         }
         return false;;
     }
+
+    /**
+     * Supprime un type de moteur en fonction de son id
+     * @param int $id
+     * 
+     * @return bool
+     */
+    public static function delete(int $id):bool {
+        $sth = Database::getInstance()->prepare('DELETE FROM `types` WHERE `types`.`Id_types` = :id;');
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+
+        if($sth->execute()){
+            if($sth->rowCount()==1){
+                return true;
+            }
+        }
+        return false;
+    }
 }

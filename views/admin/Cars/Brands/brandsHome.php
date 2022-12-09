@@ -4,8 +4,6 @@
     <div class="dashboardRow">
         <a href="/admin" class="dashboardGoBack">Retour</a>
         <a href="/admin/ajouter-marque" class="dashboardRowLink">Ajouter une marque</a>
-        <a href="/admin/ajouter-modele" class="dashboardRowLink">Ajouter un modèle</a>
-        <a href="/admin/ajouter-type" class="dashboardRowLink">Ajouter une motorisation</a>
     </div>
 
     <!-- Message Flash -->

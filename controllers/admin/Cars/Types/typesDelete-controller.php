@@ -2,8 +2,8 @@
 
 // Appel du fichier config
 require_once(__DIR__.'/../../../../config/config.php');
-// Classe Model
-require_once(__DIR__.'/../../../../models/Model.php');
+// Classe Type
+require_once(__DIR__.'/../../../../models/Type.php');
 
 // Expulse l'utilisateur s'il n'est pas connecté ou s'il n'est pas admin
 if (isset($_SESSION['user'])) {
@@ -18,18 +18,19 @@ if (isset($_SESSION['user'])) {
     exit();
 }
 
-// On récupère l'id de la marque pour la redirection
-$id_brand = intval(filter_input(INPUT_GET, 'id_brand', FILTER_SANITIZE_NUMBER_INT));
-// On récupère l'id du modèle à supprimer
+// On récupère l'id du modèle pour la redirection
+$id_model = intval(filter_input(INPUT_GET, 'id_model', FILTER_SANITIZE_NUMBER_INT));
+// On récupère l'id du type à supprimer
 $id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
-$isDeleted = Model::delete($id);
+
+$isDeleted = Type::delete($id);
 if ($isDeleted) {
-    SessionFlash::setGood('Modèle '.Model::getOne($id)->name.' '.Model::getOne($id)->car_year.' supprimé avec succès');
+    SessionFlash::setGood('Motorisation supprimée avec succès');
 } else {
-    SessionFlash::setError('Une erreur est survenue lors de la suppression du modèle '. Model::getOne($id)->name.' '.Model::getOne($id)->car_year);
+    SessionFlash::setError('Une erreur est survenue lors de la suppression de la motorisation '. Type::getOne($id)->name);
 }
 
-// Retourne à la page de la liste des marques
-header('Location: /admin/modeles?id='.$id_brand);
+// Retourne à la page de la liste des modèles
+header('Location: /admin/motorisations?id='.$id_model);
 exit();

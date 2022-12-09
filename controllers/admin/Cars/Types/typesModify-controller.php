@@ -33,8 +33,6 @@ $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 // On récupère la motorisation
 $type = Type::getOne($id);
 
-echo '<pre>' , var_dump($type) , '</pre>';
-
 // On sépare la motorisation et la puissance
 $explodeEngineType = explode('(', $type->engine_type);
 
@@ -104,7 +102,7 @@ if (empty($error)) {
     // On enregistre les modifications dans la base de données
     $typeUpdated = Type::modify($id, $engine_type, $motorization);
     if($typeUpdated == true){
-        SessionFlash::setGood('Vous avez bien modifier la motorisation ' . $engine_type);
+        SessionFlash::setGood('Vous avez bien modifié la motorisation ' . $engine_type);
         header('Location: /admin/motorisations?id=' . $id_model);
         exit;
     }

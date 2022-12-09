@@ -3,6 +3,7 @@
 
     <div class="dashboardRow">
         <a href="/admin/vehicules" class="dashboardGoBack">Retour</a>
+        <a href="/admin/ajouter-modele?id_brand=<?=$id?>" class="dashboardRowLink">Ajouter un modèle</a>
     </div>
     
     <!-- Message Flash -->

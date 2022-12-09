@@ -30,7 +30,7 @@ any('/admin', '/controllers/admin/home-controller.php');
 
     // USERS
 // Page d'accueil des utilisateurs
-any('/admin/utilisateurs', '/controllers/admin/Users/usersHome-controller.php');
+// any('/admin/utilisateurs', '/controllers/admin/Users/usersHome-controller.php');
 
 // Page liste des utilisateurs
 any('/admin/liste-utilisateur', '/controllers/admin/Users/usersList-controller.php');
@@ -59,6 +59,9 @@ any('/admin/supprimer-marque', '/controllers/admin/Cars/Brands/brandsDelete-cont
 // Page suppression d'une marque
 any('/admin/modifier-marque', '/controllers/admin/Cars/Brands/brandsModify-controller.php');
 
+// Page ajout d'une marque
+any('/admin/ajouter-marque', '/controllers/admin/Cars/Brands/brandsAdd-controller.php');
+
 
 
     // MODELS
@@ -71,6 +74,9 @@ any('/admin/supprimer-modele', '/controllers/admin/Cars/Models/modelsDelete-cont
 // Page modification d'un modèle
 any('/admin/modifier-modele', '/controllers/admin/Cars/Models/modelsModify-controller.php');
 
+// Page ajout d'un modèle
+any('/admin/ajouter-modele', '/controllers/admin/Cars/Models/modelsAdd-controller.php');
+
 
 
     // TYPES
@@ -82,6 +88,9 @@ any('/admin/supprimer-motorisation', '/controllers/admin/Cars/Types/typesDelete-
 
 // Page modification d'un type
 any('/admin/modifier-motorisation', '/controllers/admin/Cars/Types/typesModify-controller.php');
+
+// Page ajout d'un type
+any('/admin/ajouter-motorisation', '/controllers/admin/Cars/Types/typesAdd-controller.php');
 
 
 

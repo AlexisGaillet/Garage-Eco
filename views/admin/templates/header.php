@@ -39,7 +39,7 @@
                     <a href="/admin" class="nav-link no-decoration">Accueil</a>
                 </li>
                 <li class="nav-item no-decoration">
-                    <a href="/admin/utilisateurs" class="nav-link no-decoration">Utilisateurs</a>
+                    <a href="/admin/liste-utilisateur" class="nav-link no-decoration">Utilisateurs</a>
                 </li>
                 <li class="nav-item no-decoration">
                     <a href="/admin/vehicules" class="nav-link no-decoration">Véhicules</a>

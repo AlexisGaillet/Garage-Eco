@@ -1,5 +1,5 @@
 <main>
-    <h2 class="pageTitle">Modifier une Marque</h2>
+    <h2 class="pageTitle">Ajouter une Marque</h2>
 
     <div class="dashboardRow">
         <a href="/admin/vehicules" class="dashboardGoBack">Retour</a>
@@ -12,7 +12,7 @@
                 <p class="errorText"><?=$error['brandName'] ?? ''?></p>
 
                 <li>
-                    <input type="checkbox" name="mostSelled" id="noEndYear" <?=($mostSelledValue == 1) ? 'checked' : ''?>>
+                    <input type="checkbox" name="mostSelled" id="noEndYear" <?=($mostSelled == 1) ? 'checked' : ''?>>
                     <label for="mostSelled">Fait parti des marques les plus vendus</label>
                 </li>
                 <p class="errorText"><?=$error['mostSelled'] ?? ''?></p>

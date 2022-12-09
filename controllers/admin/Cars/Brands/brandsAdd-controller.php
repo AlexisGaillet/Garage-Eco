@@ -8,7 +8,7 @@ require_once(__DIR__.'/../../../../models/Brand.php');
 // Nom du fichier CSS de la page
 $stylesheet = 'admin';
 // Titre de la page
-$headTitle = 'Modification d\'une marque';
+$headTitle = 'Ajout d\'une marque';
 
 // Expulse l'utilisateur s'il n'est pas connecté ou s'il n'est pas admin
 if (isset($_SESSION['user'])) {
@@ -23,21 +23,19 @@ if (isset($_SESSION['user'])) {
     exit();
 }
 
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-
-$brand = Brand::get($id);
-
-$nameValue = $brand->name;
-$mostSelledValue = $brand->most_selled;
+if (!isset($mostSelled)) {
+    $mostSelled = 0;
+}
 
 // Si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // Nettoyage
+        // Nettoyage
 // Nettoyage du nom de la marque ($brandName)
 $brandName = trim(filter_input(INPUT_POST, 'brandName', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_NO_ENCODE_QUOTES));
 // Nettoyage de l'option le plus vendue ($mostSelled)
 $mostSelled = filter_input(INPUT_POST, 'mostSelled', FILTER_SANITIZE_NUMBER_INT);
+
 
 
 
@@ -66,17 +64,11 @@ if (!is_null($mostSelled)) {
 
 // Si il n'y a pas d'erreur
 if (empty($error)){
-    // On crée un nouveau objet User
-    $brand = new Brand;
     // On enregistre les informations en base de donnée
-    $brand = $brand->modify($id, $brandName, $mostSelled);
+    $brand = Brand::add($brandName, $mostSelled);
     // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
     if($brand == true){
-        SessionFlash::setGood('Vous avez bien modifié la marque ' . $brandName);
-        header('Location: /admin/vehicules');
-        exit;
-    } else {
-        SessionFlash::setError('Une erreur est survenue lors de la modification de la marque ' . $brandName);
+        SessionFlash::setGood('Vous avez bien ajouté la marque ' . $brandName);
         header('Location: /admin/vehicules');
         exit;
     }
@@ -88,6 +80,6 @@ if (empty($error)){
 // Header
 include(__DIR__.'/../../../../views/admin/templates/header.php');
 // Main
-include(__DIR__.'/../../../../views/admin/Cars/Brands/brandsModify.php');
+include(__DIR__.'/../../../../views/admin/Cars/Brands/brandsAdd.php');
 // Footer
 include(__DIR__.'/../../../../views/admin/templates/footer.php');
