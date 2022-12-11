@@ -31,18 +31,23 @@
 
             <!-- Container des liens de la navbar -->
             <ul class="nav-menu">
-                <!-- Liens de la navbar -->
+                    <!-- Liens de la navbar -->
+                <!-- Bouton Dashbord (Pour l'admin) -->
                 <?php if (isset($_SESSION['user']) && $_SESSION['user']->admin == 1) { ?>
                     <li class="nav-item no-decoration">
                         <a href="/admin" class="nav-link no-decoration dashboardNavbarButton"><span>Dashboard</span></a>
                     </li>
                 <?php } ?>
+
                 <li class="nav-item no-decoration">
                     <a href="/ajouter-un-vehicule" class="nav-link no-decoration">Ajouter un véhicule</a>
                 </li>
+
                 <li class="nav-item no-decoration">
                     <a href="/" class="nav-link no-decoration">Accueil</a>
                 </li>
+
+                <!-- Bouton inscription ou connexion (si il n'est pas connecté) -->
                 <?php if (!isset($_SESSION['user'])) { ?>
                     <li class="nav-item no-decoration">
                         <a href="/inscription" class="nav-link no-decoration">Inscription</a>
@@ -50,6 +55,8 @@
                     <li class="nav-item no-decoration">
                         <a href="/connexion" class="nav-link no-decoration">Connexion</a>
                     </li>
+
+                <!-- Bouton Déconnexion (si il est connecté) -->
                 <?php } elseif (isset($_SESSION['user'])) { ?>
                     <li class="nav-item no-decoration">
                         <a href="/deconnexion" class="nav-link no-decoration">Déconnexion</a>

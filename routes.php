@@ -20,6 +20,12 @@ any('/mot-de-passe-oublie', '/controllers/forgotPassword-controller.php');
 // Page ajouter un véhicule
 any('/ajouter-un-vehicule', '/controllers/addCar-controller.php');
 
+// Page choisir un véhicule
+any('/choisir-un-vehicule', '/controllers/chooseCar-controller.php');
+
+// Page Réparer moi-même
+any('/reparer-moi-meme', '/controllers/repairMyself-controller.php');
+
 
 
 

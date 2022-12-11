@@ -12,7 +12,7 @@
         <!-- Bordure du premier choix -->
         <div class="boxChoiceBorder">
             <!-- Container (avec background-image) du premier choix -->
-            <a href="#" class="boxLink"><span class="box1 boxChoice">
+            <a href="/choisir-un-vehicule" class="boxLink"><span class="box1 boxChoice">
                 <!-- Texte du premier choix -->
                 <p class="textChoice">Moi-même</p>
             </span></a>

@@ -1,0 +1,1 @@
+<?= '<pre>' , var_dump(Car::get($_SESSION['user']->Id_users)->Id_cars) , '</pre>' ?>

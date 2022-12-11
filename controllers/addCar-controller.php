@@ -114,5 +114,5 @@ include(__DIR__.'/../views/templates/footer.php');
 } else {
     SessionFlash::setError('Vous devez être connecté pour accéder à cette page');
     header('Location: /connexion');
-    
+    exit();
 }

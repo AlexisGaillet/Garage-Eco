@@ -1,6 +1,8 @@
 <main class="mainRegisterLogin flex-column-center">
     <h2 class="pageTitle">Ajouter un véhicule</h2>
-    
+
+    <!-- Message Flash -->
+    <?php if (SessionFlash::existGood()) { ?> <h4 class="message-flash textGreen"><?= SessionFlash::get() ?></h4> <?php } elseif (SessionFlash::existError()) { ?> <h4 class="message-flash textRed"><?= SessionFlash::get() ?></h4> <?php } ?>
 
     <form method="post" class="registerLoginForm flex-column">
         <ul>
