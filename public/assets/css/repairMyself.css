@@ -18,8 +18,24 @@
     height: 400px;
     max-width: 1200px;
     background-color: rgb(255, 246, 122);
-
+    display: flex;
+    flex-direction: column;
 }
+
+.row {
+    width: 100%;
+}
+
+.searchBar {
+    height: 50px;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    font-size: 1.3rem;
+    border: 3px solid #817EFF;
+    border-radius: 10px;
+}
+
+
 
 
 

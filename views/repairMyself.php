@@ -15,8 +15,15 @@
     <h3 class="sectionTitle">Quel est le problème ?</h3>
 
     <!-- Container de la partie "Quel est le probleme" -->
-    <div class="width-100 flex justify-center">
-        <div class="whatIsTheProblemContainer">
+    <div class="width-100 flex justify-center border-box">
+        <div class="whatIsTheProblemContainer border-box">
+
+            <input type="text" name="problem" class="searchBar border-box">
+
+
+
+
+
 
         </div>
     </div>

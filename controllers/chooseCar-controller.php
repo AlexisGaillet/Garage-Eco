@@ -32,6 +32,12 @@ if (Car::userHasCar($_SESSION['user']->Id_users) == false) {
     exit();
 }
 
+// Si la session userCar existe déjà, on redirige l'utilisateur vers la page de réparation
+if (isset($_SESSION['userCar'])) {
+    header('Location: /reparer-moi-meme');
+    exit();
+}
+
 // Si l'user a un seul véhicule, on le redirige directement vers la page de réparation
 if (Car::userHasCar($_SESSION['user']->Id_users) == 1) {
     // On récupère l'id de l'unique véhicule
