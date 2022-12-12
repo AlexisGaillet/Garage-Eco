@@ -18,12 +18,21 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-// Vérification de la présence d'un véhicule
+// Vérification de si l'utilisateur a un véhicule
 if (Car::userHasCar($_SESSION['user']->Id_users) == false) {
     SessionFlash::setError('Vous devez avoir un véhicule pour accéder à cette page');
     header('Location: /ajouter-un-vehicule');
     exit();
 }
+
+// Vérification de la présence d'un véhicule
+if (!isset($_SESSION['userCar'])) {
+    SessionFlash::setError('Vous devez choisir un véhicule pour accéder à cette page');
+    header('Location: /choisir-un-vehicule');
+    exit();
+}
+
+
 
     // Appel des vues    
 // Header

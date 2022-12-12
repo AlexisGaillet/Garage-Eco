@@ -1,0 +1,36 @@
+/* Bouton en haut à gauche de la page */
+.upLeftButton {
+    margin: 2rem;
+}
+.upLeftButton span {
+    padding: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(70deg, #4D4ACC 0%, #817EFF 100%);
+    border-radius: 4px;
+}
+
+/* Container de la partie "Quel est le probleme" */
+.whatIsTheProblemContainer {
+    margin-top: 10px;
+    width: 90%;
+    height: 400px;
+    max-width: 1200px;
+    background-color: rgb(255, 246, 122);
+
+}
+
+
+
+@media screen and (min-width: 576px) {
+    
+}
+
+@media screen and (min-width: 996px) {
+    
+}
+
+@media screen and (min-width: 1200px) {
+    
+}

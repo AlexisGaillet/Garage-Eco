@@ -131,8 +131,28 @@ class Car {
 
         if ($sth -> rowCount() == 1) {
             return $sth -> fetch();
-        } elseif ($sth -> rowCount() >= 1) {
+        } elseif ($sth -> rowCount() > 1) {
             return $sth -> fetchAll();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Donne les informations d'une voiture
+     * @param int $id_user
+     * 
+     * @return array
+     */
+    public static function getByCarId(int $Id_car):object|bool {
+        $sth = Database::getInstance()->prepare('SELECT * FROM cars WHERE Id_cars = :Id_car;');
+
+        $sth->bindValue(':Id_car', $Id_car, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        if ($sth -> rowCount() == 1) {
+            return $sth -> fetch();
         } else {
             return false;
         }

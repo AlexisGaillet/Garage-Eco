@@ -1,4 +1,4 @@
-<main class="mainRegisterLogin flex-column-center">
+<main class="min-height-main-center flex-column-center">
     <h2 class="pageTitle">Inscription</h2>
     <form method="post" class="registerLoginForm flex-column">
         <ul>

@@ -1,9 +1,3 @@
-/* Taille et positionnement du main */
-.mainRegisterLogin {
-    min-height: calc(100vh - 70px - 117.5px - 40px);
-    justify-content: center;
-}
-
 /* Positionnement du formulaire */
 .registerLoginForm {
     justify-content: center;
@@ -82,26 +76,22 @@
     width: 100%;
 }
 
-
+.addCarSelect {
+    max-width: 600px !important;
+}
 
 
 
 @media screen and (min-width: 576px) {
-    .mainRegisterLogin {
-        min-height: calc(100vh - 74px - 126px - 60px);
-    }
+    
 }
 
 
 @media screen and (min-width: 996px) {
-    .mainRegisterLogin {
-        min-height: calc(100vh - 86px - 137px - 70px);
-    }
+    
 }
 
 
 @media screen and (min-width: 1200px) {
-    .mainRegisterLogin {
-        min-height: calc(100vh - 90px - 150px - 80px);
-    }
+    
 }

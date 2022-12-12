@@ -1,4 +1,4 @@
-<main class="mainRegisterLogin flex-column-center">
+<main class="min-height-main-center flex-column-center">
     <h2 class="pageTitle">Ajouter un véhicule</h2>
 
     <!-- Message Flash -->
