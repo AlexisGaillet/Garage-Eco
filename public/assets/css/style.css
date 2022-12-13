@@ -33,6 +33,13 @@ body {
     text-align: center;
 }
 
+/* Petit titre */
+.smallTitle {
+    font-size: 1.4rem;
+    margin: 5px;
+    text-align: center;
+}
+
 /* Ligne séparatrice */
 .line {
     width: 70%;

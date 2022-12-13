@@ -17,7 +17,7 @@
     width: 90%;
     height: 400px;
     max-width: 1200px;
-    background-color: rgb(255, 246, 122);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
 }
@@ -33,6 +33,42 @@
     font-size: 1.3rem;
     border: 3px solid #817EFF;
     border-radius: 10px;
+}
+
+.recommendedSearchContainer {
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+.recommendedSearch {
+    padding: 3px 5px;
+    font-size: 1rem;
+    color: black;
+    background-color: rgb(238, 238, 238);
+    border: 1px solid #797979;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.recommendedSearch:hover {
+    background-color: #615eee;
+    color: white;
+}
+
+/* Bouton Inscription/Connexion */
+.registerLoginButton {
+    width: 15rem;
+    height: 4rem;
+    margin-top: 20px;
+    background: linear-gradient(0deg, #4D4ACC 0%, #817EFF 100%);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 2rem;
+    align-self: center;
+    cursor: pointer;
 }
 
 

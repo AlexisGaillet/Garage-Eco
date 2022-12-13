@@ -2,6 +2,8 @@
 
 // Appel du fichier config
 require_once(__DIR__.'/../config/config.php');
+// Appel du fichier config
+require_once(__DIR__.'/../helpers/array/recommendedSearch-array.php');
 // Classe Car
 require_once(__DIR__.'/../models/Car.php');
 
@@ -31,8 +33,6 @@ if (!isset($_SESSION['userCar'])) {
     header('Location: /choisir-un-vehicule');
     exit();
 }
-
-
 
     // Appel des vues    
 // Header

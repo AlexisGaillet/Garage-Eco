@@ -33,7 +33,7 @@ if (Car::userHasCar($_SESSION['user']->Id_users) == false) {
 }
 
 // Si la session userCar existe déjà, on redirige l'utilisateur vers la page de réparation
-if (isset($_SESSION['userCar'])) {
+if (isset($_SESSION['userCar']) && $_GET['choose'] != 1) {
     header('Location: /reparer-moi-meme');
     exit();
 }
@@ -43,14 +43,17 @@ if (Car::userHasCar($_SESSION['user']->Id_users) == 1) {
     // On récupère l'id de l'unique véhicule
     $carId = Car::get($_SESSION['user']->Id_users)->Id_cars;
 
+    // Récupération des id de la marque, du modèle et du type du véhicule
+    $car = Car::getByCarId($carId);
+
     // On enregistre les infos du véhicule dans la session
     $_SESSION['userCar'] = array(
         'carId' => $carId,
-        'carBrand' => Brand::get($carId)->name,
-        'carModel' => Model::getOne($carId)->name,
-        'carYear' => Model::getOne($carId)->car_year,
-        'carType' => Type::getOne($carId)->engine_type,
-        'carCompleteName' => Brand::get($carId)->name.' '.Model::getOne($carId)->name.' '.Model::getOne($carId)->car_year.' - '.Type::getOne($carId)->engine_type
+        'carBrand' => Brand::get($car->Id_brands)->name,
+        'carModel' => Model::getOne($car->Id_models)->name,
+        'carYear' => Model::getOne($car->Id_models)->car_year,
+        'carType' => Type::getOne($car->Id_types)->engine_type,
+        'carCompleteName' => Brand::get($car->Id_brands)->name.' '.Model::getOne($car->Id_models)->name.' '.Model::getOne($car->Id_models)->car_year.' - '.Type::getOne($car->Id_types)->engine_type
     );
 
     // On redirige l'utilisateur vers la page de réparation
@@ -79,15 +82,19 @@ if (Car::getByCarId($carId)->Id_users != $_SESSION['user']->Id_users) {
     $error['car'] = 'Vous ne pouvez pas choisir ce véhicule';
 }
 
+
 if (empty($error)) {
+    // Récupération des id de la marque, du modèle et du type du véhicule
+    $car = Car::getByCarId($carId);
+
     // Enregistrement des infos du véhicule dans la session
     $_SESSION['userCar'] = array(
         'carId' => $carId,
-        'carBrand' => Brand::get($carId)->name,
-        'carModel' => Model::getOne($carId)->name,
-        'carYear' => Model::getOne($carId)->car_year,
-        'carType' => Type::getOne($carId)->engine_type,
-        'carCompleteName' => Brand::get($carId)->name.' '.Model::getOne($carId)->name.' '.Model::getOne($carId)->car_year.' - '.Type::getOne($carId)->engine_type
+        'carBrand' => Brand::get($car->Id_brands)->name,
+        'carModel' => Model::getOne($car->Id_models)->name,
+        'carYear' => Model::getOne($car->Id_models)->car_year,
+        'carType' => Type::getOne($car->Id_types)->engine_type,
+        'carCompleteName' => Brand::get($car->Id_brands)->name.' '.Model::getOne($car->Id_models)->name.' '.Model::getOne($car->Id_models)->car_year.' - '.Type::getOne($car->Id_types)->engine_type
     );
     
     // Redirection vers la page de réparation
@@ -95,7 +102,6 @@ if (empty($error)) {
     exit();
 }
 }
-
 
     // Appel des vues    
 // Header
