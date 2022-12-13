@@ -14,6 +14,9 @@ define('REGEX_PASSWORD', "(?=.[A-Z])(?=.\d)(?=.[!@#$&])[A-Za-z\d!@#$&*]{8,}");
 define('REGEX_EMAIL', "^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
 
 
+define('LIMIT_SOLUTIONS', 10);
+
+
 // BASE DE DONNEES
 define('DSN', 'mysql:host=localhost;dbname=garage-eco;charset=utf8;port=3306');
 define('USER', 'garage-eco-admin');

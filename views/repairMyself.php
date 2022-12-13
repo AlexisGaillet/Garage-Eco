@@ -14,13 +14,12 @@
     <!-- Titre de la section -->
     <h3 class="sectionTitle">Quel est le problème ?</h3>
 
-    <form method="get">
+    <form method="get" action="/reparer-moi-meme/choisir-solution">
     <!-- Container de la partie "Quel est le probleme" -->
     <div class="width-100 flex justify-center border-box margin-top-20px">
         <div class="whatIsTheProblemContainer border-box">
 
-            <h4 class="smallTitle"><?= $_SESSION['userCar']['carCompleteName'] ?></h3>
-
+            <h4 class="smallTitle"><?= $_SESSION['userCar']['carCompleteName'] ?></h4>
 
             <input type="text" name="problem" class="searchBar border-box" placeholder="Bruit aigu lors du démarrage">
 
@@ -32,7 +31,6 @@
 
             <input type="submit" value="Confirmer" class="registerLoginButton" required>
 
-            
         </div>
     </div>
 </form>

@@ -11,9 +11,9 @@ class Solution {
     private string $_title;
 
     // Constructeur
-    public function __construct(string $title) {
-        $this->_title = $title;
-    }
+    // public function __construct(string $title) {
+    //     $this->_title = $title;
+    // }
 
     // Getters
     public function getId():int {
@@ -31,5 +31,35 @@ class Solution {
 
     public function setName(string $title):void {
         $this->_title = $title;
+    }
+
+
+
+    // Méthodes
+
+    /**
+     * Récupère la liste des solutions dans la base de données
+     * @param int $offset
+     * @param string $problem
+     * 
+     * @return array
+     */
+    public static function list(int $offset = -1, string $problem = ''):array|bool {
+        if ($offset != -1) {
+            if ($problem == '') {
+                $sth = Database::getInstance()->query('SELECT * FROM `solutions` LIMIT ' . LIMIT_SOLUTIONS .' OFFSET '. $offset .';');
+            } else {
+                $sth = Database::getInstance()->query('SELECT * FROM `solutions` WHERE `title` LIKE "%' . $problem . '%" ORDER BY `Id_solutions` DESC LIMIT ' . LIMIT_SOLUTIONS .' OFFSET '. $offset .';');
+            }
+        } else {
+            if ($offset == -1) {
+                $sth = Database::getInstance()->query('SELECT * FROM `solutions` ORDER BY `Id_solutions` DESC;');
+            }
+        }
+
+        if ($sth -> rowCount() >= 1) {
+            return  $sth->fetchAll();
+        }
+        return false;
     }
 }

@@ -3,8 +3,8 @@
     <div class="rowFooter1 flex-row-space-between">
         <!-- Logo cliquable -->
         <a href="/"><img src="./../public/assets/img/garage’ecoLogo.svg" alt="Logo Garage'Eco" class="logo"></a>
-        <!-- "Site crée par..." avec lien vers le CV numérique -->
-        <p class="tp1zdlQ">Site crée par <a href="https://alexis-plus.fr/" target="_blank">Alexis Gaillet</a></p>
+        <!-- "Site réalisé par..." avec lien vers le CV numérique -->
+        <p class="tp1zdlQ">Site réalisé par <a href="https://alexis-plus.fr/" target="_blank">Alexis Gaillet</a></p>
     </div>
     <!-- Deuxième ligne -->
     <div class="rowFooter2 flex-row">
