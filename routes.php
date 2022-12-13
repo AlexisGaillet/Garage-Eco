@@ -26,8 +26,11 @@ any('/choisir-un-vehicule', '/controllers/chooseCar-controller.php');
 // Page Réparer moi-même
 any('/reparer-moi-meme', '/controllers/repairMyself-controller.php');
 
-// Page Réparer moi-même
+// Page Solutions
 any('/reparer-moi-meme/choisir-solution', '/controllers/chooseSolution-controller.php');
+
+// Page Tutoriel
+any('/reparer-moi-meme/tutoriel', '/controllers/tutorial-controller.php');
 
 
 

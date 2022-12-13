@@ -52,4 +52,22 @@ class Step {
     public function setDescription(string $description):void {
         $this->_description = $description;
     }
+
+
+    // Méthodes
+
+    // Récupère toutes les étapes d'une solution
+    public static function list(int $id_solution):object|array|bool {
+        $sth = Database::getInstance()->prepare('SELECT * FROM `steps` WHERE `Id_solutions` = :Id_solutions ORDER BY `Id_steps` ASC;');
+
+        $sth->bindValue(':Id_solutions', $id_solution, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        if ($sth -> rowCount() >= 1) {
+            return $sth->fetchAll();
+        } else {
+            return false;
+        }
+    }
 }

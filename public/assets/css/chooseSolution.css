@@ -1,3 +1,24 @@
+/* Bouton en haut à gauche de la page */
+.upperPageButton {
+    margin: 2rem;
+    margin-bottom: 10px;
+}
+.upperButton span {
+    padding: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(70deg, #4D4ACC 0%, #817EFF 100%);
+    border-radius: 4px;
+}
+
+.searchBar {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .chooseSolutionContainer {
     margin-top: 10px;
     width: 90%;
@@ -9,12 +30,13 @@
 .solutionsContainer {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 1.6rem;
 }
 
 .solutionContainer {
     width: 100%;
-    height: auto;
+    height: 10rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,10 +47,11 @@
 
 .solutionImg {
     width: 30%;
-    height: auto;
+    height: 10rem;
 }
 .solutionImg img {
     width: 100%;
+    height: 10rem;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
 }
@@ -43,7 +66,7 @@
 .solutionTitle {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0 0 0.2rem 0;
+    margin: 0 0 0.6rem 0;
 }
 .solutionDescription {
     font-size: 1rem;
