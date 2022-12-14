@@ -5,6 +5,8 @@ require_once(__DIR__.'/../config/config.php');
 // Classe Car
 require_once(__DIR__.'/../models/Car.php');
 // Classe Solution
+require_once(__DIR__.'/../models/Solution.php');
+// Classe Step
 require_once(__DIR__.'/../models/Step.php');
 
 
@@ -37,14 +39,23 @@ if (!isset($_SESSION['userCar'])) {
 
 // On vérifie que le formulaire a bien été envoyé
 if (isset($_GET['solution'])) {
-    $solution = htmlspecialchars($_GET['solution']);
-    $steps = (Step::list($solution));
+    $id_solution = htmlspecialchars($_GET['solution']);
+    $solution = Solution::getOne($id_solution);
+    $steps = Step::list($id_solution);
 } else {
     SessionFlash::setError('Vous devez choisir un problème pour accéder à cette page');
     header('Location: /reparer-moi-meme/choisir-solution');
     exit();
 }
 
+if ($steps == false) {
+    SessionFlash::setError('Aucun tutoriel trouvé pour cette solution');
+    header('Location: /reparer-moi-meme/choisir-solution');
+    exit();
+}
+
+// echo '<pre>' , var_dump($steps) , '</pre>';
+// echo '<pre>' , var_dump($solution) , '</pre>';
 
     // Appel des vues    
 // Header

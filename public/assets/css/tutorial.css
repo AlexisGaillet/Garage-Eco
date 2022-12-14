@@ -1,0 +1,111 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.tutorialContainer {
+    width: 90%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    background-color: rgb(250, 250, 250);
+}
+
+.solutionTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+
+.solutionDescription {
+    font-size: 1.4rem;
+    width: 94%;
+    margin-bottom: 2rem;
+}
+
+.summaryTitle {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.summary ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.6rem;
+}
+
+.summary ul li {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    scroll-behavior: smooth;
+}
+
+.summary ul li a {
+    color: #6966E7;
+    font-weight: 600;
+    transition: color 0.1s ease-in-out;
+}
+.summary ul li a:hover {
+    color: #32329e;
+    /* text-decoration: underline; */
+}
+
+.summary {
+    margin-bottom: 2rem;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+}
+
+.stepTitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.stepImg {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.stepImg img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.stepDescription {
+    font-size: 1.2rem;
+}
+
+
+
+@media screen and (min-width: 576px) {
+    
+}
+
+@media screen and (min-width: 996px) {
+    
+}
+
+@media screen and (min-width: 1200px) {
+    
+}

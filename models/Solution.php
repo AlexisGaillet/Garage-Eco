@@ -62,4 +62,21 @@ class Solution {
         }
         return false;
     }
+
+    /**
+     * Récupère une solution dans la base de données
+     * @param int $id
+     * 
+     * @return object
+     */
+    public static function getOne(int $id):object|bool {
+        $sth = Database::getInstance()->prepare('SELECT * FROM `solutions` WHERE `Id_solutions` = :Id_solutions;');
+        $sth->bindValue(':Id_solutions', $id, PDO::PARAM_INT);
+        $sth->execute();
+
+        if ($sth -> rowCount() == 1) {
+            return  $sth->fetch();
+        }
+        return false;
+    }
 }
