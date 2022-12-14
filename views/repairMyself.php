@@ -25,7 +25,7 @@
 
             <div class="recommendedSearchContainer">
                 <?php foreach ($recommendedSearch_array as $key => $value) { ?>
-                        <a href="" class="no-decoration"><p class="recommendedSearch"><?= $value ?></p></a>
+                        <a href="/reparer-moi-meme/choisir-solution?problem=<?=$value?>" class="no-decoration"><p class="recommendedSearch"><?= $value ?></p></a>
                 <?php } ?>
             </div>
 

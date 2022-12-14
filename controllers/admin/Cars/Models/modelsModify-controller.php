@@ -55,16 +55,11 @@ $noEndYear = filter_input(INPUT_POST, 'noEndYear', FILTER_SANITIZE_NUMBER_INT);
 
     // Validation
 // Validation du nom du modèle ($name)
-$isOk = filter_var($name, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
+// $isOk = filter_var($name, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NO_SPECIAL_CHAR . '/')));
 
 // Champ vide
 if (empty($name)) {
     $error['name'] = 'Vous devez renseigner un nom de modèle';
-} else {
-    // nom de modèle invalide
-    if (!$isOk) {
-        $error['name'] = 'Le nom du modèle n\'est pas valide';
-    }
 }
 
 // Validation de l'année de début ($startYear)

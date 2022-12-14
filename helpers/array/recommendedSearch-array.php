@@ -19,4 +19,5 @@ $recommendedSearch_array = [
     'Retirer la rouille',
     'Remplacer le filtre à air',
     'Changer un pneu crevé',
+    'Vidange'
 ];

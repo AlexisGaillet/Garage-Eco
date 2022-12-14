@@ -225,6 +225,55 @@
 
 
 
+
+
+.statsDashboardContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.statsDashboard {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statsBox {
+    background-color: #f5f5f5;
+    padding: 16px 0;
+}
+
+.statsNumberValue {
+    font-size: 6rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    color: #5f5ecc;
+    text-align: center;
+}
+.statsTrackValue {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.usersStats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 @media screen and (min-width: 576px) {
     .userCard {
         width: 400px;
@@ -237,6 +286,10 @@
     .userCard {
         width: 450px;
         height: 190px;
+    }
+
+    .statsDashboard {
+        flex-direction: row;
     }
 }
 
