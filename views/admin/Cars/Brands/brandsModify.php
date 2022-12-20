@@ -8,7 +8,7 @@
     <div class="formDashBoardContainer flex-column-center">
         <form method="post" class="formDashboard flex-column">
             <ul>
-                <li><input type="text" placeholder="Nom de la marque" value="<?=$brandName ?? ''?>" name="brandName" class="flex-row" required><span class="textRed font-size-1-6rem">*</span></li>
+                <li><input type="text" placeholder="Nom de la marque" value="<?=$nameValue ?? ''?>" name="brandName" class="flex-row" required><span class="textRed font-size-1-6rem">*</span></li>
                 <p class="errorText"><?=$error['brandName'] ?? ''?></p>
 
                 <li>

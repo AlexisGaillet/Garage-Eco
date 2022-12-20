@@ -19,7 +19,10 @@ if (isset($_SESSION['user'])) {
 // On récupère l'id de la marque à supprimer
 $id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
+// On supprime la marque
 $isDeleted = Brand::delete($id);
+
+// Message de confirmation ou d'erreur
 if ($isDeleted) {
     SessionFlash::setGood('Marque '. Brand::get($id)->name .' supprimée avec succès');
 } else {

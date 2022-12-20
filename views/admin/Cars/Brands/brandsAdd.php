@@ -13,7 +13,7 @@
 
                 <li>
                     <input type="checkbox" name="mostSelled" id="noEndYear" <?=($mostSelled == 1) ? 'checked' : ''?>>
-                    <label for="mostSelled">Fait parti des marques les plus vendus</label>
+                    <label for="mostSelled">Fait partie des marques les plus vendus</label>
                 </li>
                 <p class="errorText"><?=$error['mostSelled'] ?? ''?></p>
             </ul>

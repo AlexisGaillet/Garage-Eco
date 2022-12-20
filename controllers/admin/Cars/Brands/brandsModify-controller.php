@@ -66,10 +66,8 @@ if (!is_null($mostSelled)) {
 
 // Si il n'y a pas d'erreur
 if (empty($error)){
-    // On crée un nouveau objet User
-    $brand = new Brand;
     // On enregistre les informations en base de donnée
-    $brand = $brand->modify($id, $brandName, $mostSelled);
+    $brand = Brand::modify($id, $brandName, $mostSelled);
     // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
     if($brand == true){
         SessionFlash::setGood('Vous avez bien modifié la marque ' . $brandName);
