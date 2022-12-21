@@ -59,6 +59,9 @@
                 <!-- Bouton Déconnexion (si il est connecté) -->
                 <?php } elseif (isset($_SESSION['user'])) { ?>
                     <li class="nav-item no-decoration">
+                        <a href="/modifier-profil" class="nav-link no-decoration">Modifier le profil</a>
+                    </li>
+                    <li class="nav-item no-decoration">
                         <a href="/deconnexion" class="nav-link no-decoration">Déconnexion</a>
                     </li>
                 <?php } ?>

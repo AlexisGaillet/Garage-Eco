@@ -15,12 +15,16 @@
         </div>
 
         <h3 class="dashboardSectionTitle">Voiture(s)</h3>
-        <?php if (Car::userHasCar($users->Id_users)) { 
+        <?php if (Car::userHasCar($users->Id_users) > 1) { 
             foreach ($cars as $car) {?>
             <div class="usersInfo">
                 <p class="usersInfoText"><?=Brand::get($car->Id_brands)->name.' '.Model::getOne($car->Id_models)->name.' '.Model::getOne($car->Id_models)->car_year.' - '.Type::getOne($car->Id_types)->engine_type?></p>
             </div>
-        <?php }} else { ?>
+        <?php }} elseif (Car::userHasCar($users->Id_users) == 1 ) { ?>
+            <div class="usersInfo">
+                <p class="usersInfoText"><?=Brand::get($cars->Id_brands)->name.' '.Model::getOne($cars->Id_models)->name.' '.Model::getOne($cars->Id_models)->car_year.' - '.Type::getOne($cars->Id_types)->engine_type?></p>
+            </div>
+        <?php } else { ?>
             <p class="usersInfoText">Cet utilisateur n'a pas de voiture</p>
         <?php } ?>
     </div>

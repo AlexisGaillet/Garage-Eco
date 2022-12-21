@@ -14,6 +14,9 @@ any('/connexion', '/controllers/login-controller.php');
 // Page de déconnexion
 any('/deconnexion', '/controllers/logout-controller.php');
 
+// Page modification profil
+any('/modifier-profil', '/controllers/userModify-controller.php');
+
 // Page de mot de passe oublié
 any('/mot-de-passe-oublie', '/controllers/forgotPassword-controller.php');
 
