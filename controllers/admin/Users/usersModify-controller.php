@@ -117,7 +117,7 @@ if (empty($error)){
     $user = $user->modify($id);
     // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
     if($user){
-        SessionFlash::setGood('L\'utilisateur avec l\'ID '.$id.' bien été modifié');
+        SessionFlash::setGood('L\'utilisateur avec l\'ID '.$id.' a bien été modifié');
         header('Location: /admin/liste-utilisateur');
         exit;
     }

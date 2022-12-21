@@ -45,7 +45,7 @@
         <h3 class="sectionTitle">La réparation à domicile</h3>
         <!-- Paragraphe de "La réparation à domicile" -->
         <p class="paragraphHome margin-bottom-20px">Pour faire vos réparations vous-même, certaines fois, vous aurez besoin 
-            des équipements particuliers et des conseils d’un professionnel ou d’un amateur très averti. 
-            Assurez-vous d’avoir les outils et les pièces nécessaires pour le bien de vôtre réparation.</p>
+            d'équipements particuliers. Vous aurez également besoin de conseils d’un professionnel ou d’un amateur très averti. 
+            Assurez-vous d’avoir les outils et les pièces nécessaires pour le bien de votre réparation.</p>
     </div>
 </main>

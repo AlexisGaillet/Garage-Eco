@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         // Vérification si l'email existe déjà
         if (User::exist($mail) == true) {
-            $error['mail'] = 'Cet adresse mail existe déjà';
+            $error['mail'] = 'Cette adresse mail existe déjà';
         }
     }
 

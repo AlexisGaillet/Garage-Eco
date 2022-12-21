@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $car = $car->set($id_user, $id_brand, $id_model, $id_type);
         // Si l'utilisateur est bien enregistré on redirige vers la âge connexion avec un message de succé (SessionFlash)
         if($car == true){
-            SessionFlash::setGood('Vous avez bien ajouter un véhicule');
+            SessionFlash::setGood('Vous avez bien ajouté un véhicule');
             header('Location: /');
             exit;
         }
