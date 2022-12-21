@@ -51,7 +51,7 @@ class Brand {
     // Méthodes
 
     /**
-     * Ajoute une marque dans la base de donnée
+     * Add Brand to database
      * @param string $name
      * @param int $most_selled
      * 

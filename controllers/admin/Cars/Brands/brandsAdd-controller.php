@@ -10,7 +10,7 @@ $stylesheet = 'admin';
 // Titre de la page
 $headTitle = 'Ajout d\'une marque';
 
-// Expulse l'utilisateur s'il n'est pas connecté ou s'il n'est pas admin
+// User is admin ?
 if (isset($_SESSION['user'])) {
     if ($_SESSION['user']->admin == 0) {
         SessionFlash::setError('Vous n\'avez pas la permission d\'accéder à cette page');

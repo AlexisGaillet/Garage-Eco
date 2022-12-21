@@ -18,7 +18,7 @@ $stylesheet = 'loginRegister';
 $headTitle = 'Choisir un véhicule';
 
 
-// Vérification de la connexion de l'utilisateur
+// User is connected ?
 if (!isset($_SESSION['user'])) {
     SessionFlash::setError('Vous devez être connecté pour accéder à cette page');
     header('Location: /connexion');
@@ -69,7 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Nettoyage
 // Nettoyage de l'id du moteur
-$carId = trim(filter_input(INPUT_POST, 'car', FILTER_SANITIZE_NUMBER_INT));
+if (isset($_POST['car'])) {
+    $carId = trim(filter_input(INPUT_POST, 'car', FILTER_SANITIZE_NUMBER_INT));
+} else {
+    SessionFlash::setError('Vous devez avoir un véhicule pour accéder à cette page');
+    header('Location: /choisir-un-vehicule');
+    exit();
+}
 
     // Validation
 // Validation de l'id du moteur

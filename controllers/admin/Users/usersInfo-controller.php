@@ -2,6 +2,14 @@
 
 // Classe User
 require_once(__DIR__.'/../../../models/User.php');
+// Classe User
+require_once(__DIR__.'/../../../models/Car.php');
+// Classe User
+require_once(__DIR__.'/../../../models/Brand.php');
+// Classe User
+require_once(__DIR__.'/../../../models/Model.php');
+// Classe User
+require_once(__DIR__.'/../../../models/Type.php');
 // Appel du tableau des roles
 require_once(__DIR__.'/../../../helpers/array/role-array.php');
 
@@ -28,6 +36,8 @@ $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 // On récupère les informations de l'utilisateur
 $users = User::get('', $id);
+
+$cars = Car::get($id);
 
 
     // Appel des vues    
