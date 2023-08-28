@@ -19,8 +19,8 @@ define('LIMIT_SOLUTIONS', 10);
 
 // BASE DE DONNEES
 define('DSN', 'mysql:host=localhost;dbname=garage-eco;charset=utf8;port=3306');
-define('USER', 'garage-eco-admin');
-define('PWD', 'UEjY-6MM[k*bCkO9');
+define('USER', '');
+define('PWD', '');
 
 
 
